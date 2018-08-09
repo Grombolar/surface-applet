@@ -1,0 +1,27 @@
+<template name="test_rules">
+  <view class="test_rules_box">
+      <view class="rules_title">
+        Mini考考试规则
+      </view>
+      <view class="test_rules_container">
+        <view class="rules__box">
+          <view class="rule_name">
+            考试类型
+          </view>
+          <view class="rule_content">{{tempData.category}}</view>
+        </view>
+        <view class="rules__box">
+          <view class="rule_name">
+            周考
+          </view>
+          <view class="rule_content">{{tempData.weekly}}</view>
+        </view>
+        <view class="rules__box">
+          <view class="rule_name">
+            专题考试
+          </view>
+          <view class="rule_content">{{tempData.special}}</view>
+        </view>
+      </view>
+  </view>
+</template>

@@ -1,0 +1,106 @@
+<import src="../tabbar/tabbar.wxml" />
+<!--<import src="../totalShow/totalShow.wxml"/>
+<template is="show_node"/>-->
+<!--使用导航模板-->
+<template is="tabbar" data="{{tabbar}}" />
+<view hidden="{{!showPages}}">
+  <!--banner图-->
+  <view class="banner">
+    <swiper class="banner_item" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}">
+      <block wx:for="{{ (isAE & turnList.length > 0 ) ? turnList : imgUrls}}" wx:key="item">
+        <swiper-item bindtap="navGiftDetail" data-url="{{item.url}}">
+          <image wx:if="{{item.img_url!=null||item.img_url!=''}}" src="{{imgUrl+((item.img_url.length > 4)? item.img_url : '/uploads/images/news/default.png')}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view wx:if="{{ isAE }}">
+    <!--PDF导航-->
+    <view class="pdfsection">
+      <text bindtap="getPDF" class="get_pdf" url='../searchPlayBook/searchPlayBook'>获取最新PDF版PlayBook</text>
+      <navigator class='search_playbook' url="../searchPlayBook/searchPlayBook">快速查询</navigator>
+    </view>
+
+    <!-- PlayBook案例 -->
+    <view class="indexExampPb">
+      <navigator url="/pages/playBook/playBook?id={{item.id}}&type={{item.type}}" class="playbook_item" wx:for="{{journalList}}" wx:key="list_{{index}}">
+        <view class="playbook_img_box">
+          <image wx:if="{{item.img_url!=''}}" src="{{imgUrl+((item.img_url.length > 4)? item.img_url : '/uploads/images/news/default.png')}}" class="playbook_img"></image>
+        </view>
+        <view class="playbook_info_box">
+          <view class="playbook_title">{{item.name}}</view>
+          <view class="playbook_summary">{{item.summary}}</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+  <view wx:if="{{ !isAE }}">
+    <!--导航-->
+    <view class="nav ">
+      <view bindtap="toNavPage" data-url="../earnPoints/earnPoints?game={{game}}" class="nav_item ">
+        <view class='image_box'>
+          <image src='../../images/integral.png' class="nav_img"></image>
+        </view>
+        <view class='title_font'>
+          <view class="title_top">如何赚积分</view>
+          <view class="title_bottom">赚积分赢大奖</view>
+        </view>
+      </view>
+      <view class="nav_line"></view>
+      <view bindtap="toNavPage" data-url="../signIn/signIn" class="nav_item">
+        <view class='image_box'>
+          <image src='../../images/sign.png' class="nav_img"></image>
+        </view>
+        <view class='title_font'>
+          <view class="title_top">每日签到</view>
+          <view class="title_bottom">你今天签到了吗</view>
+        </view>
+      </view>
+    </view>
+    <!--热门礼品-->
+    <view class="hot_box">
+      <view class="hot_gift">
+        <text class="hot_title">热门礼品</text>
+        <text class="hot_more" bindtap="toAllGifts">More</text>
+      </view>
+      <scroll-view scroll-x="true" class="scroll_view" style="width: 100%">
+        <view class='scoll_box' style='width:{{scrollwidth*242}}rpx'>
+          <navigator url="../giftDetail/giftDetail?id={{item.id}}" wx:for="{{hotgifts}}" wx:key="hot_{{index}}" id="green" class="scroll_banner">
+            <view class="images_box hot_img" style="background-color:white;">
+              <image wx:if="{{item.img_url!=''}}" src="{{imgUrl+item.img_url}}" class="scroll_img"></image>
+            </view>
+            <view class="scroll_title">
+              <view class="one_line">{{item.name}}</view>
+              <view>{{item.price}}积分</view>
+            </view>
+          </navigator>
+        </view>
+      </scroll-view>
+      <!--积分抽奖-->
+      <navigator wx:if="{{game}}" url="../game/game" class="luck_draw">
+        <image src="../../images/cj.png"></image>
+      </navigator>
+      <view bindtap="alert" wx:else class="luck_draw">
+        <image src="../../images/cj.png"></image>
+      </view>
+    </view>
+    <!--为您推荐-->
+    <view class="recommend">
+      <view class="hot_gift">
+        <text class="hot_title">为您推荐</text>
+        <text class="hot_more" bindtap="toAllGifts">More</text>
+      </view>
+      <view class="recommend_box">
+        <navigator url="../giftDetail/giftDetail?id={{item.id}}" wx:for="{{recommend}}" wx:key="recommend_{{index}}" class="recommend_item">
+          <image wx:if="{{item.imgUrl!=''}}" src="{{imgUrl+item.img_url}}"></image>
+          <view class="recommend_info">
+            <view class="one_line">{{item.name}}</view>
+            <view class="one_line">{{item.price}}积分</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

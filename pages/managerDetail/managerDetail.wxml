@@ -1,0 +1,99 @@
+<!--经销员说明-->
+<view class="manager_box">
+  <view class="manager_photo">
+    <image wx:if="{{info.head_img}}" src="{{info.head_img}}"></image>
+  </view>
+  <view class="manaer_name">
+  {{info.nickname}}
+  </view>
+  <view wx:if="{{isSalesperson}}">
+    <view class="explain" style="margin-top:16rpx;">
+      {{info.username}}申请认证为贵公司营销员
+    </view>
+    <view class="explain">
+      请认真核实对方身份后进行处理
+    </view>
+  </view>
+</view>
+<!--申请者基本信息-->
+<view class="apply_info">
+  <view class="info_item">
+    <view class="icon_box">
+      <image src="../../images/company.png"></image>
+    </view>
+    <view class="title">
+      公司：
+    </view>
+    <view class="info">
+      {{info.company_name}}
+    </view>
+  </view>
+  <view class="info_item">
+    <view class="icon_box">
+      <image  style="width:30rpx;height:30rpx"  src="../../images/name.png"></image>
+    </view>
+    <view class="title">
+      姓名：
+    </view>
+    <view class="info">
+     {{info.username}}
+     
+    </view>
+  </view>
+  <view class="info_item">
+    <view class="icon_box">
+      <image src="../../images/gender_ss.png"></image>
+    </view>
+    <view class="title">
+      性别：
+    </view>
+    <view class="info">
+       {{info.sex=='2'?'女':'男'}}
+    </view>
+  </view>
+ <view class="info_item">
+    <view class="icon_box">
+      <image style="height:34rpx"  src="../../images/phone.png"></image>
+    </view>
+    <view class="title">
+      电话：
+    </view>
+    <view class="info">
+      {{info.userphone}}
+    </view>
+  </view>
+   <view class="info_item">
+    <view class="icon_box">
+      <image src="../../images/email.png"></image>
+    </view>
+    <view class="title">
+      邮件：
+    </view>
+    <view class="info">
+      {{info.useremail}}
+    </view>
+  </view>
+   <view class="remark">
+    <view class="left_box">
+      <view class="icon_box">
+        <image src="../../images/remark.png"></image>
+      </view>
+      <view class="title">
+        备注：
+      </view>
+    </view>
+    <view class="info">
+      {{info.remark}}
+    </view>
+  </view>
+</view>
+<!--处理按钮-->
+<view class="submit_box" wx:if="{{!isManager}}">
+  <view wx:if="{{isSalesperson}}" class="btn_box">
+    <button class="adopt" bindtap="applyPass" id="{{info.id}}">审核通过</button>
+    <button class="refuse" bindtap="toRefuse" data-type="refuse" id="{{info.id}}">拒接</button>
+  </view>
+  <view wx:else class="remove_btn">
+    <button class="refuse" bindtap="toRefuse" data-type="move" id="{{info.id}}">移除此经销员</button>
+  </view>
+</view>

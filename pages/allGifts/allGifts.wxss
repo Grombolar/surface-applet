@@ -1,0 +1,229 @@
+/* pages/allGifts/allGifts.wxss */
+@import '../tabbar/tabbar.wxss';
+/* 头部声明信息 */
+.my_gift_header_declaration{
+  display: block;
+  width: 100%;
+   height: 56rpx; 
+  /* height: 4.483vh; */
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #F1F1F1; 
+  font-size: 18rpx;
+  color: #30b5f2;
+  line-height: 4.483vh;
+  text-align: center;
+}
+/*我的积分*/
+.my_integral
+{
+  padding: 0 4%;
+  height: 7.285vh;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #F1F1F1;
+}
+.my_integral_box
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+}
+/*****/
+.my_integral_item
+{
+  height: 130rpx;
+  background-color: white;
+  text-align: center;
+  border-bottom: 2rpx solid #F1F1F1;
+  border-right: 2rpx solid #F1F1F1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.image_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.corn_icon
+{
+  width: 26rpx;
+  height: 28rpx;
+}
+/*积分icon*/
+.my_integral_box image
+{
+  width: 26rpx;
+  height: 28rpx;
+  margin-right:14rpx;
+}
+.my_integral_box text
+{
+  color:#f25022;
+  font-size: 30rpx;
+}
+.integral_num
+{
+  font-size: 30rpx;
+  font-weight: bold;
+  color:#f25022;
+}
+.my_gift_section
+{
+  width: 100%;
+  height:87.24vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/*礼品类型按钮*/
+.gift_bar
+{
+  width:210rpx;
+  height:87.24vh;
+  background-color: #f7fafd;
+  overflow-y: scroll;
+}
+/*选择按钮*/
+.select_bar
+{
+  width: 100%;
+  text-align: center;
+  height: 96rpx;
+  font-size: 30rpx;
+  color:#333333;
+  line-height: 96rpx;
+  border-bottom: 2rpx solid #F1F1F1;
+  border-right: 2rpx solid #F1F1F1;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling:touch;
+  position: relative;
+  padding:0 10rpx;
+}
+/*选中时按钮*/
+.selected_bar
+{
+   background-color: white;
+  color:#30b5f2;
+  font-weight: bold;
+}
+.selected_bar::before
+{
+  content: '';
+  height: 96rpx;
+  width: 8rpx;
+  position: absolute;
+  left:0;
+  top:0;
+  background-color: #30b5f2;
+}
+/*礼品列表*/
+.gift_list
+{
+  width: 540rpx;
+  height:87.24vh;
+  background-color:white;
+ 
+}
+.filter_name
+{
+  color:#333333;
+  font-size: 26rpx;
+  padding:30rpx 0;
+  padding-left:24rpx;
+  font-weight: bold;
+}
+/*筛选条件*/
+.filter_box
+{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 2rpx solid #F1F1F1;
+  width:480rpx;
+  padding-left:30rpx;
+}
+/*筛选按钮*/
+.filter_box view
+{
+  width: 230rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  box-sizing: border-box;
+  border:2rpx solid #CCCCCC;
+  border-radius: 4rpx;
+  margin-bottom:24rpx;
+  text-align: center;
+  color:#666;
+  font-size: 26rpx;
+}
+/*点击筛选按钮*/
+.filter_btn_selected
+{
+  border-color:#30b5f2 !important;
+  color:#30b5f2 !important;
+}
+/*礼品列表容器*/
+.gift_container
+{
+  width: 100%;
+  height:87.24vh;
+  border-bottom:2rpx solid #F1F1F1;
+  /* height:63.5vh;*/
+}
+.gift_item
+{
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:30rpx 0;
+  padding-left:30rpx;
+  border-bottom: 2rpx solid #F1F1F1;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+.gift_photo
+{
+  width: 122rpx;
+  height: 122rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gift_photo>image
+{
+  width: 122rpx;
+  height: 122rpx;
+  border:2rpx solid #F1F1F1
+}
+.gift_disc_box
+{
+  width:314rpx;
+  height: 122rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.gift_disc
+{
+  font-size: 26rpx;
+  color:#333333;
+}
+.gift_num
+{
+  color:#f35b5b;
+  font-size: 28rpx;
+  position: absolute;
+  bottom: 0rpx;
+  width:100%;
+  text-align: right;
+}

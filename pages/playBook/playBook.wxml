@@ -1,0 +1,41 @@
+<view class="aside_box" animation="{{ isOpen ?  animationOpen : animationClose  }}" wx:if="{{showMenu}}">
+  <scroll-view scroll-y class="aid_bar_box">
+  <view class="aid_header">
+    <text class="aid_header_title">{{bookInfo.name}}</text>
+  </view>
+    <block wx:for="{{bookNav}}" wx:key="item_{{index}}">
+      <view class="menu_box">
+        <view bindtap="selectNav" id="{{item.jtype}}" class="aid_bar one_line {{item.selected?'selected_bar':''}}">
+          {{item.btnname}}
+        </view>
+        <block wx:if="{{ item.secMenu.length > 0 }}">
+          <view class="secMenuBox {{item.selected?'showSecMenuBox':''}}">
+            <block wx:for="{{ item.secMenu }}" wx:for-item="second" wx:key="{{second.secType}}">
+              <view bindtap="selectMenu" data-id="{{second.secId}}" data-index="{{second.secType}}" data-parent="{{item.jtype}}" class="secMenu_event {{second.secSelected ? 'show_secMenu_event' : '' }}">
+                {{second.secName}}
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="shrink_btn" bindtap="controllAid">
+    <image class="shrink_icon" src="../../images/{{isOpen ? 'close.png' : 'open.png' }} "></image>
+  </view>
+  <view class="aid_dark" bindtap="closeAside" animation="{{ isOpen ?  animationShow : animationNone  }}"></view>
+</view>
+
+<view class="article_box" hidden="{{!showPages}}">
+  <view class="article_title">{{articleDetail.name}}</view>
+  <!-- <view class="article_type_box">
+    <text>{{articleDetail.create_at}}</text>
+  </view> -->
+  <view style="position:relative; overflow:hidden;margin-top:20rpx;">
+    <scroll-view scroll-y class="articl_detail_scroll">
+      <view class="rich_text">
+        <rich-text nodes="{{articleDetail.detail}}" />
+      </view>
+    </scroll-view>
+  </view>
+</view>

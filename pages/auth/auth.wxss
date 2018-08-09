@@ -1,0 +1,22 @@
+/* pages/auth/auth.wxss */
+.succ_icon
+{
+  width: 100%;
+  text-align: center;
+  margin-top:250rpx;
+}
+.succ_text
+{
+  color:#333333;
+  font-size: 36rpx;
+  text-align: center;
+  line-height: 36rpx;
+  margin-top:30rpx;
+}
+.succ_explain
+{
+  color:#666;
+  font-size: 26rpx;
+  line-height: 66rpx;
+  text-align: center;
+}

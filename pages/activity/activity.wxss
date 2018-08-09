@@ -1,0 +1,11 @@
+/* pages/activity/activity.wxss */
+@import '../tabbar/tabbar.wxss';
+
+/* 引入活动详情  */
+@import './detial.wxss';
+
+page {
+  width: 100%;
+  height: 100vh;
+  background-color: #f7fafd;
+}

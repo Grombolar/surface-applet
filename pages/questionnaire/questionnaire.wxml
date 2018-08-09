@@ -1,0 +1,29 @@
+<!--pages/questionnaire/questionnaire.wxml-->
+<import src="./questionModal.wxml" />
+<scroll-view scroll-y class="test_paper">
+  <!--题库-->
+  <form bindsubmit="formSubmit">
+    <view class="questions_items">
+      <view class="single_question" wx:for="{{testList.testlist}}" wx:key="title_{{index}}">
+        <view class="question">
+          {{index+1}}，{{item.testtile}}
+          <text wx:if="{{item.radio === 'radio_question'}}">[单选]</text>
+          <text wx:elif="{{item.radio === 'multiselect_question'}}">[多选]</text>
+          <text wx:elif="{{item.radio === 'text_question'}}">[问答题]</text>
+        </view>
+
+        <template is="{{item.radio}}" data="{{selectitems:item.selectitems,qid:item.qid,testtype:testList.testtype,answerTxt:item.answerTxt}}" />
+      </view>
+      <!--提交按钮-->
+      <button wx:if="{{testList.testtype =='0'}}" class="submit" formType="submit">提交答案</button>
+      <button wx:else class="submit submit_isDo">您已作答</button>
+    </view>
+  </form>
+  <!-- </view> -->
+</scroll-view>
+ <view animation="{{animationShow}}" class="after_submit {{isSubmit ? 'after_show':''}}"> 
+  <image class="submit_pic" src="/images/commit_success.png"></image>
+  <text class="submit_txt">提交成功!</text>
+  <button wx:if="{{moreUrl !== null && moreUrl !== '' && moreUrl !== undefined}}" class='copyurl' bindtap="copyUrl">了解更多→</button>
+  <button wx:else class='copyurl' bindtap="goHome">返回首页→</button>
+</view>

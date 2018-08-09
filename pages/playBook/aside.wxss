@@ -1,0 +1,106 @@
+.aside_box{
+  width: 60vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-left: -60vw;
+}
+
+.aid_bar_box
+{
+  height:100vh;
+  width:100%;
+  /* background-color: #f7fafd; */
+  overflow-y: scroll;
+}
+.aid_bar
+{
+  width: 100%;
+  text-align: center;
+  height: 96rpx;
+  font-size: 26rpx;
+  color:#333333;
+  line-height: 96rpx;
+  border-bottom: 2rpx solid #F1F1F1;
+  border-right: 2rpx solid #F1F1F1;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling:touch;
+  position: relative;
+  padding:0 10rpx;
+}
+/*选中时按钮*/
+.selected_bar
+{
+  background-color: white;
+  color:#30b5f2;
+  font-weight: bold;
+}
+.selected_bar::after
+{
+  content: '';
+  display: block;
+  width:8rpx;
+  height: 96rpx;
+  background-color:#30b5f2;
+  position: absolute;
+  left: 0;
+  top:0; 
+}
+/* 二级菜单 */
+.secMenuBox{
+  width: 30vw;
+  height: 0;
+  background-color: #F8FBFE;
+  overflow: hidden;
+}
+
+.showSecMenuBox{
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.secMenu_event{
+  width: 27vw;
+  text-align: center;
+  height: 80rpx;
+  font-size: 24rpx;
+  color:#8C8C8C;
+  line-height: 80rpx;
+  background-color: #ffffff;
+  border-bottom: 2rpx solid #F1F1F1;
+  border-left: 2rpx solid #F1F1F1;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling:touch;
+  position: relative;
+  padding:0 10rpx;
+ }
+
+.show_secMenu_event{ 
+  background-color: #BAECFE;
+  color: #ffffff;
+  border-bottom: 2rpx solid #ffffff;
+  border-left: 2rpx solid #ffffff;
+}
+
+.shrink_btn{
+  width: 40rpx;
+  height: 61rpx;
+  position: absolute;
+  right: -41rpx;
+  top: 50rpx;
+  /* border-top: solid #30b5f2 4rpx; */
+  /* border-right: solid #30b5f2 4rpx; */
+  /* border-bottom: solid #30b5f2 4rpx; */
+  border-radius: 4rpx;
+  display: flex;
+}
+
+.shrink_icon{
+  width: 100%;
+  height: 100%;
+
+}

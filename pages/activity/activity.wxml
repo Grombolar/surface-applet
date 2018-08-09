@@ -1,0 +1,12 @@
+<!--pages/activity/activity.wxml-->
+<!-- <import src="../tabbar/tabbar.wxml" />
+<!--使用导航模板-->
+<!-- <template is="tabbar" data="{{tabbar}}" />  -->
+<!-- 使用经销商线上活动模板 --><!-- 使用客户线下活动模板 -->
+<import src="./detial.wxml" />
+<!-- 使用surface Day 问卷调查活动模板 -->
+<!-- <import src="./questionnaire.wxml" /> -->
+<!-- 容器 -->
+<scroll-view scroll-y style="position: relative;" bindscrolltolower="scrollLoadMore">
+  <template is="{{temp}}" data="{{tempData}}" />
+</scroll-view>

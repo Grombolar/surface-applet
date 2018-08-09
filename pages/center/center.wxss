@@ -1,0 +1,225 @@
+@import '../tabbar/tabbar.wxss';
+page
+{
+  background-color: #F5F9FC;
+}
+.header
+{
+  width: 92%;
+  height: 240rpx;
+ 
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  padding:0 4%;
+  position: relative;
+}
+.photo
+{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.user_name
+{
+  color:white;
+  font-size: 36rpx;
+  display: inline-flex;
+  align-items: center;
+}
+.user_company
+{
+  color:white;
+  font-size: 30rpx;
+}
+.user_manager
+{
+  color:white;
+  font-size: 24rpx;
+  min-width: 90rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  text-align: center;
+  background-color: #80BEE7;
+  border-radius: 17rpx;
+  margin-left: 20rpx;
+  display:inline-block;
+  padding:0 8rpx;
+  box-sizing: border-box;
+}
+/************/
+.user_box
+{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: row;
+  color:#fff;
+  font-size: 24rpx;
+  position: absolute;
+  right:24rpx;
+  top:34rpx;
+}
+.user_info_icon
+{
+  width: 24rpx;
+  height: 24rpx;
+  margin-left:6rpx;
+}
+/******/
+.my_integral_box
+{
+  width: 92%;
+  padding:0 4%;
+  background-color: white;
+  height: 120rpx;
+  margin-top:24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.integral_icon
+{
+  width: 24rpx;
+  height: 28rpx;
+  margin-right: 15rpx;
+  vertical-align: middle;
+}
+.my_integral
+{
+  color:#333;
+  font-size: 30rpx;
+}
+.integral
+{
+  color:#f25022;
+  font-size: 26rpx;
+  font-weight: bold;
+  padding-left:18rpx;
+}
+.check_integral_title
+{
+  color:#666;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+}
+.check_title
+{
+  padding-right: 14rpx;
+}
+.check_point
+{
+  display: block;
+  width: 19rpx;
+  height: 19rpx;
+  border-top: 2rpx solid #999999;
+  border-right: 2rpx solid #999999;
+  transform-origin: 50% 50%;
+  transform:  rotate(45deg);
+}
+/****/
+.my_order
+{
+  height: 90rpx;
+  border-bottom: 2rpx solid #F5F5F5;
+}
+.my_integral_title
+{
+  display: inline-flex;
+  align-items: center;
+}
+.my_order_items
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.order_item
+{
+  height: 136rpx;
+  background-color: white;
+  width: 39.3333%;
+  padding-left: 10.6666%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ 
+}
+.middle_line
+{
+  position: absolute;
+  left: 50%;
+  top:33rpx;
+  height: 70rpx;
+  border-left: 2rpx solid #F1F1F1;
+}
+.image_icon_box
+{
+  position: relative;
+}
+.image_counts
+{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right:-8rpx;
+  top:-4rpx;
+  border:2rpx solid #f25022;
+  color:#f25022;
+  font-size: 24rpx;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  line-height: 30rpx;
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: center;
+}
+.order_icon
+{
+  width: 90rpx;
+  height: 90rpx;
+}
+.gift_font
+{
+  color:#333333;
+  font-size: 26rpx;
+  margin-left: 24rpx;
+}
+.apply_nav
+{
+ position: fixed;
+ bottom:185rpx;
+ color:#999;
+ font-size: 30rpx;
+ width:100%;
+ display: flex;
+ justify-content: center;
+ 
+}
+.login_box
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  position: relative;
+  top:20rpx;
+}
+.login_btn
+{
+  background-color: transparent;
+  outline: none;
+  border:none;
+  color:#ffffff;
+  font-size: 30rpx !important;
+  
+}
+.login_btn::after
+{
+  content: none;
+}

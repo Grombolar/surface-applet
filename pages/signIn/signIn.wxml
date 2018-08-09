@@ -1,0 +1,60 @@
+<view hidden="{{hiddenPage}}" class="sign_in_bg" style="background-image: url({{imgUrl+'/images/static/bck.png'}});background-size:100% {{padding?'':'100%'}}">
+  <view class="sign_title">
+    已连续签到{{signInfo.hassigned}}天
+  </view>
+  <view class="sign_box">
+    <view class="today">今日是</view>
+    <view  class="days_box">
+      <text>第</text><text class="days">{{signInfo.todaysign?signInfo.hassigned:signInfo.hassigned+1}}</text><text>天</text>
+    </view>
+    <!--小于等于5-->
+    <view wx:if="{{signInfo.hassigned<=5}}" class="get_score_box">
+      <text wx:if="{{!signInfo.todaysign}}" >+{{signInfo.signdays[signInfo.hassigned%5==0?0:(signInfo.hassigned%5)].number}}</text>
+      <text wx:if="{{signInfo.todaysign}}" >+{{signInfo.signdays[signInfo.hassigned%5==0?0:(signInfo.hassigned%5)-1].number}}</text>
+      <view class="get_score">
+        <image src="../../images/corn.png"></image>
+      </view>
+    </view>
+     <!--大于5-->
+    <view wx:if="{{signInfo.hassigned>5}}" class="get_score_box">
+      <text >+{{signInfo.signdays[4].number}}</text>
+      <view class="get_score">
+        <image src="../../images/corn.png"></image>
+      </view>
+    </view>
+  </view>
+  <!--每日签到-->
+  <view class="sign_container">
+    <view class="sign_day" wx:for="{{signInfo.signdays}}" wx:key="sign_{{index}}">
+      <view class="sign_day_circle {{item.issign?'':'no_sign'}}" >
+        +{{item.number}}
+      </view>
+      <view class="sign_day_text">
+        连续{{item.day}}天
+      </view>
+    </view>
+  </view>
+  <!--我的积分-->
+  <view class="my_score_total">
+    我的积分 ：{{myIntegral}}
+  </view>
+  <!--签到  wx:if="{{signInfo.todaysign}}" -->
+  <view class="submit_box ">
+    <view bindtap="toSignIn" class="submit_sign" style="{{signInfo.todaysign?'background-color:#ccc;color:#fff':''}}">
+      签到
+    </view>
+  </view>
+  
+  <!--规则-->
+  <view class="sign_rule">
+    <view class="rules">活动规则</view>
+  </view>
+  <view class="sign_content">
+  <!--1，连续签到可以获取相应积分
+2，无连续签到按签到一天算积分
+3，超过连续签到5天，按5+积分获取-->
+    <view> 1，连续签到可以获取相应积分</view>
+    <view>2，无连续签到按签到一天算积分</view>
+    <view>3，超过连续签到5天，按5+积分获取</view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+<!--pages/authorization/authorization.wxml-->
+<view class='wrap'>
+    <image class='showImg' src='../../images/3.png'></image>
+    <button open-type="getUserInfo" type='primary' bindgetuserinfo="getUserInfoFun">授权登录小程序</button> 
+    <text class='showTxt'>
+      本授权仅是获取用户头像，昵称等公开信息，以方便用户获得更好的体验
+    </text>
+</view>

@@ -1,0 +1,54 @@
+<import src="../totalShow/totalShow.wxml" />
+<template is="show_node" data="{{showToast:showToast,title:title,img:'notice_2'}}" />
+
+<!--使用导航模板-->
+<block wx:if="{{showNav}}">
+  <import src="../tabbar/tabbar.wxml" />
+  <template is="tabbar" data="{{tabbar}}" />
+</block>
+
+<text class="my_gift_header_declaration">礼品模块由总代运营支持</text>
+<!--礼品种类选择和礼品列表-->
+<view class="my_gift_section">
+  <!--礼品种类选择-->
+  <scroll-view scroll-y class="gift_bar">
+    <view class="my_integral_item">
+      <view class="my_integral_box">
+        <view class="image_box">
+          <image src="../../images/corn.png" class="corn_icon"></image>
+        </view>
+        <text>我的积分</text>
+      </view>
+      <view class="integral_num">
+        {{myIntegral}}
+      </view>
+    </view>
+    <block wx:for="{{giftTypeBtn}}" wx:key="gifttype_{{index}}">
+      <view bindtap="selectGiftType" id="{{item.gtype}}" class="select_bar one_line {{item.selected?'selected_bar':''}}">
+        {{item.btnname}}
+      </view>
+    </block>
+  </scroll-view>
+  <!--礼品列表-->
+  <view class="gift_list">
+    <scroll-view bindscrolltolower="scrollTolower" scroll-y class="gift_container">
+      <view class="filter_name">按积分筛选</view>
+      <view class="filter_box">
+        <view bindtap="selectFilter" id="{{index}}" wx:for="{{filterBtn}}" class="{{item.selected?'filter_btn_selected':''}}" wx:key="filter_{{index}}">{{item.btnname}}</view>
+      </view>
+      <navigator url="../giftDetail/giftDetail?id={{item.id}}" class="gift_item" wx:for="{{giftList}}" wx:key="gift_{{index}}">
+        <view class="gift_photo">
+          <image src="{{imgUrl+item.img_url}}"></image>
+        </view>
+        <view class="gift_disc_box">
+          <view class="gift_disc ellipsis">
+            {{item.name}}
+          </view>
+          <view class="gift_num">
+            {{item.price}}积分
+          </view>
+        </view>
+      </navigator>
+    </scroll-view>
+  </view>
+</view>

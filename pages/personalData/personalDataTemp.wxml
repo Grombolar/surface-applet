@@ -1,0 +1,39 @@
+<!--根据不同身份显示个人信息-->
+<template name="personal_header">
+  <view class="user_info_header">
+    <image src="{{userInfo.avatarUrl}}" class="user_photo"></image>
+    <text class="user_name">{{userInfo.nickName}}</text>
+    <view wx:if="{{issale}}" hidden="{{src}}" class="user_warn_box">
+      <view class="user_warn">您的身份认证申请已提交，请等待贵公司管理员审核</view>
+      <view class="user_warn">若超过3个工作日仍未审核，您可通过以下联系方式</view>
+      <view class="user_warn">进行友好提醒</view>
+      <view class="user_info_list">
+        <!--用户名-->
+        <view class="user_item">
+          <view class="user_item_icon">
+            <image src="../../images/name.png" ></image>
+          </view>
+          <view class="item">{{manager.username}}</view>
+        </view>
+        <!--电话-->
+        <view class="user_item">
+          <view class="user_item_icon">
+            <image src="../../images/phone.png" ></image>
+          </view>
+          <view class="item">{{manager.userphone}}</view>
+        </view>
+         <!--邮件-->
+        <view class="user_item">
+          <view class="user_item_icon">
+            <image src="../../images/email.png" ></image>
+          </view>
+          <view class="item">{{manager.usereamil}}</view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{isShowApplyTip}}"  class="user_warn_box">
+      <view class="user_warn">如果您是经销员，请填写以下信息以身份认证</view>
+      <view class="user_warn">认证成功后即可享受各种经销员特权</view>
+    </view>
+  </view>
+</template>

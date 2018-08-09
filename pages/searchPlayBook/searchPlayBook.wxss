@@ -1,0 +1,212 @@
+/* pages/searchPlayBook/searchPlayBook.wxss */
+
+/* 引入搜索栏样式 */
+
+/* @import '../search/search.wxss'; */
+
+.search_header {
+  width: 84vw;
+  height: 72rpx;
+  padding: 40rpx 8vw;
+  border-bottom: solid rgb(206, 205, 205) 1rpx;
+}
+
+.search_section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search_section_content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search_box {
+  width: 570rpx;
+  height: 50rpx;
+  padding: 0 10rpx;
+  border: solid 2rpx #aaa;
+  border-radius: 4rpx;
+  font-size: 30rpx;
+  color: #333;
+  line-height: 50rpx;
+  margin-left: 24rpx;
+}
+
+.btn_search_box {
+  width: 78rpx;
+  height: 78rpx;
+  border: 0;
+  background-color: transparent;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  margin-right: 8rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_search_box::after {
+  border: none;
+}
+
+.btn_search {
+  display: block;
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.default_keyword_box {
+  width: 80vw;
+  height: auto;
+  padding: 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.default_keyword {
+  width: auto;
+  height: 40rpx;
+  padding: 0 10rpx;
+  line-height: 40rpx;
+  border: solid 1rpx #30b5f2;
+  border-radius: 20rpx;
+  font-size: 30rpx;
+  color: #30b5f2;
+  margin: 20rpx;
+}
+
+/*rpy刊列表*/
+
+.rpy_list {
+  width: 90vw;
+  height: 80.222vh;
+  /* flex: 1; */
+  padding: 0 5vw;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+/**rpy刊item**/
+
+.search_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 0rpx;
+  /* padding-left:24rpx;
+  padding-right: 30rpx; */
+  border-bottom: 2rpx solid #f1f1f1;
+}
+
+/*rpy刊封面容器*/
+
+.search_img_box {
+ width: 180rpx;
+  height: 180rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*rpy刊封面image*/
+
+.search_img {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+/*rpy刊信息容器*/
+
+.search_info_box {
+  display: flex;
+  flex-direction: column;
+  height: 160rpx;
+  padding: 10rpx 0;
+  width: 440rpx;
+  justify-content: space-between;
+  position: relative;
+}
+
+.search_info_container {
+  display: flex;
+  flex-direction: column;
+  height: 90rpx;
+  justify-content: space-around;
+}
+
+/*rpy刊标题*/
+
+.search_title {
+  font-size: 30rpx;
+  color: #333;
+}
+
+/*文章简介*/
+
+.search_summary {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/*rpy刊状态*/
+
+.search_status {
+  font-size: 26rpx;
+  color: #30b5f2;
+  border-radius: 10rpx;
+  border: 2rpx solid #30b5f2;
+  text-align: center;
+  line-height: 36rpx;
+  padding: 2rpx 10rpx;
+}
+
+/*rpy刊日期*/
+
+.search_date {
+  font-size: 20rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+}
+
+/*时钟icon容器*/
+
+.clock_box {
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+/*时钟icon*/
+
+.clock_box_img {
+  width: 22rpx;
+  height: 22rpx;
+}
+
+.playbook_type_box {
+  display: inline-block;
+  border: 1rpx solid #30b5f2;
+  color: #30b5f2;
+  font-size: 22rpx;
+  padding: 2rpx 10rpx;
+  border-radius: 15rpx;
+  /* margin-right: 14rpx; */
+}

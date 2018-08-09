@@ -1,0 +1,17 @@
+<!--pages/myActivityList/myActivityList.wxml-->
+<view class="activity_list">
+  <block wx:for="{{activityList}}" wx:key="this">
+    <navigator class="activity_list_unit" url="/pages/activity/activity?activity_id={{item.id}}">
+      <view class="activity_unit_info">
+        <view class="activity_unit_title_info">
+          <text class="activity_unit_title">{{item.name}}</text>
+          <text wx:if="{{item.isSing === 0}}" class="activity_unit_title_status">已结束</text>
+          <text wx:elif="{{item.isSing === 1}}" class="activity_unit_title_status">未开始</text>
+          <text wx:elif="{{item.isSing === 2}}" class="activity_unit_title_status activity_unit_title_status_in">已开始</text>
+        </view>
+        <text class="activity_unit_date">{{item.start_time}} - {{item.end_time}}</text>
+      </view>
+      <text class='activity_exam_icon'>〉</text>
+    </navigator>
+  </block>
+</view>

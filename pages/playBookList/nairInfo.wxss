@@ -1,0 +1,17 @@
+.nair_title{
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+
+  transition: opacity .3s;
+}
+.show_nair_title{
+   opacity: .2;
+}
+.nair_content{
+  height: 0;
+  overflow: hidden;
+}
+.show_nair_content{
+  height: auto;
+}

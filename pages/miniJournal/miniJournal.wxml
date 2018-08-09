@@ -1,0 +1,33 @@
+<import src="../tabbar/tabbar.wxml" />
+<!--使用导航模板-->
+<template is="tabbar" data="{{tabbar}}" />
+<!--容器-->
+<view class="mini_container">
+  <!--Mini刊导航-->
+  <scroll-view scroll-y  class="mini_bar_box">
+    <block wx:for="{{journalNav}}" wx:key="item_{{index}}">
+      <view bindtap="selectNav" id="{{item.jtype}}" class="mini_bar one_line {{item.selected?'selected_bar':''}}">
+          {{item.btnname}}
+      </view>
+    </block> 
+  </scroll-view>
+  <scroll-view scroll-y class="mini_list" bindscrolltolower="scrollBottom">
+    <navigator url="../articleDetail/articleDetail?id={{item.id}}" class="journal_item" wx:for="{{journalList}}" wx:key="list_{{index}}">
+      <view class="journal_img_box">
+        <image wx:if="{{item.img_url!=''}}" src="{{imgUrl+item.img_url}}" class="journal_img"></image>
+      </view>
+      <view class="journal_info_box">
+        <view class="journal_title  one_line">{{item.name}}</view>
+        <view style="width:132rpx">
+          <text class="journal_status one_line">{{item.category_name}}</text>
+        </view>
+        <view class="journal_date">
+          <view class="clock_box">
+            <image class="clock_box_img" src="../../images/clock.png"></image>
+          </view>
+          <view>{{item.create_at}}</view> 
+        </view>
+      </view>
+    </navigator>
+  </scroll-view>
+</view>

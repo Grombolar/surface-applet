@@ -1,0 +1,71 @@
+/* pages/miniTest/miniTest.wxss */
+@import '../tabbar/tabbar.wxss';
+
+/*引入状元考样式*/
+@import './number_one_scholar.wxss';
+
+/*引入考试规则样式*/
+@import './test_rules.wxss';
+
+/*引入错题本样式*/
+@import './test_wnote.wxss';
+
+/*引入试题列表样式*/
+@import './test_item.wxss';
+
+
+.mini_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mini_bar_box {
+  height: 91.722vh;
+  width: 28%;
+  background-color: #f7fafd;
+  overflow-y: scroll;
+}
+
+.mini_bar {
+  width: 100%;
+  text-align: center;
+  height: 96rpx;
+  font-size: 30rpx;
+  color: #333;
+  line-height: 96rpx;
+  border-bottom: 2rpx solid #f1f1f1;
+  border-right: 2rpx solid #f1f1f1;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*选中时按钮*/
+
+.selected_bar {
+  background-color: white;
+  color: #30b5f2;
+  font-weight: bold;
+  position: relative;
+  /*
+  border-left: 8rpx solid #30b5f2*/
+}
+
+.selected_bar::after {
+  content: '';
+  display: flex;
+  width: 8rpx;
+  height: 96rpx;
+  background-color: #30b5f2;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mini_list {
+  width: 72%;
+  /* height:90.722vh; */
+  overflow-y: scroll;
+  background-color: #fff;
+  padding-bottom: 1vh;
+  height: 91.722vh;
+}

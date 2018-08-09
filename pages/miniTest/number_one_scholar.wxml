@@ -1,0 +1,41 @@
+ <!--状元考-->
+ <template name="number_one_scholar" >
+    <view class="number_one_scholar">
+      <!--我的排名-->
+      <view class="my_ranking">
+        <view class="ranking_title">
+          我的排名
+        </view>
+        <view class="my_medal_box">
+          <view class="my_interal">{{tempData.myranking}}</view>
+          <view class="classname">
+             <image src="../../images/my_medal.png" class="my_medal_image"></image>
+          </view>
+        </view>
+      </view>
+      <!--排名列表-->
+      <view class="ranking_item" wx:for="{{tempData.otherranking}}" wx:key="rank_{{index}}">
+        <view class="ranking_num">
+          <view wx:if="{{(index+1)==1}}" class="person_medal">
+            <image src="../../images/num_1.png"></image>
+          </view>
+          <view wx:elif="{{(index+1)==2}}" class="person_medal">
+            <image src="../../images/num_2.png"></image>
+          </view>
+          <view wx:elif="{{(index+1)==3}}" class="person_medal">
+            <image src="../../images/num_3.png"></image>
+          </view>
+          <text wx:else>{{(index+1)}}</text>
+        </view>
+        <view class="person_info">
+          <view class="item_photo">
+            <image src="{{item.head_img}}" class="photo"></image>
+          </view>
+          <view class="person_box">
+            <view class="person_name">{{item.username||''}}</view>
+            <view class="person_company one_line">{{item.company_name||''}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </template>

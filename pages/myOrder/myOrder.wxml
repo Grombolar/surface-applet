@@ -1,0 +1,31 @@
+<import src="../totalShow/totalShow.wxml"/>
+
+<!--订单导航-->
+<view class="nav_order">
+  <view wx:for="{{filterNav}}" wx:key="nav_{{index}}" bindtap="navFilter" id="{{item.filter}}" class="nav_bar {{item.selected?'select_bar':''}} ">{{item.btnname}}</view>
+</view>
+<!--订单列表-->
+<view class="order_list">
+  <navigator hidden="{{!noPage}}" url="../orderDetail/orderDetail?id={{item.id}}" wx:for="{{myOrder}}" wx:key="item_{{index}}" class="order_item">
+      <view class="order_img">
+        <image src="{{imgUrl+item.img_url}}"></image>
+      </view>
+      <view class="order_info">
+        <view class="order_title one_line">
+          {{item.name}}
+        </view>
+        <view class="order_integral">
+          {{item.price}}积分<text style="padding:0 4rpx;">×</text>{{item.num}}
+        </view>
+        <view class="order_time">
+         <text class="order_date">{{item.create_at}}</text>
+         <text wx:if="{{item.status==0}}" class="order_status">待发货</text>
+         <text wx:elif="{{item.status==1}}" class="order_status">已发货</text>
+         <text wx:elif="{{item.status==2}}" class="order_status">已完成</text>
+         <!--1代发货2已发货3已完成-->
+        </view>
+      </view>
+  </navigator>
+   
+ <template is="page_toast" data="{{noPage:noPage,img:'notice.png',msg:'没有更多数据',top:30,outTop:356}}"/>
+</view>

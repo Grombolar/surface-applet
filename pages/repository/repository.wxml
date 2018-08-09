@@ -1,0 +1,42 @@
+<!--pages/repository/repository.wxml-->
+<!-- 引入搜索模板 -->
+<import src="../search/search.wxml" />
+<!--引入导航模板-->
+<import src="../tabbar/tabbar.wxml" />
+<!--使用导航模板-->
+<template is="tabbar" data="{{tabbar}}" />
+<!-- 引入页面内容模板 -->
+<import src="./nairInfo.wxml" />
+<!--容器-->
+<view class="rpy_container">
+  <!--rpy刊导航-->
+  <scroll-view scroll-y class="rpy_bar_box">
+    <block wx:for="{{journalNav}}" wx:key="item_{{index}}">
+      <view class="menu_box">
+        <view bindtap="selectNav" id="{{item.jtype}}" class="rpy_bar one_line {{item.selected?'selected_bar':''}}">
+          {{item.btnname}}
+        </view>
+        <block wx:if="{{ item.secMenu.length > 0 }}">
+          <view class="secMenuBox {{item.selected?'showSecMenuBox':''}}">
+            <block wx:for="{{ item.secMenu }}" wx:for-item="second" wx:key="{{second.secType}}">
+              <view bindtap='selectMenu' data-id="{{second.secId}}" data-index="{{second.secType}}" data-parent='{{item.jtype}}'
+              class="secMenu_event {{second.secSelected ? 'show_secMenu_event' : '' }}">
+                {{second.secName}}
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="rpy_right">
+    <view class="rpy_search_in_box">
+      <!--使用导航模板-->
+      <template is="search" data="{{keywords}}" />
+    </view>
+    <scroll-view scroll-y class="rpy_list" bindscrolltolower="scrollBottom">
+      <!-- 使用页面内容模板 -->
+      <template is="nairInfo" data="{{journalList:journalList}}" />
+    </scroll-view>
+  </view>
+</view>

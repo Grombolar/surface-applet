@@ -1,0 +1,51 @@
+<!--单选模板-->
+<template name="radio_question">
+  <radio-group bindchange="radioChange" id="{{qid}}" name="{{qid}}" class="radio-group">
+    <label class="choice_item" for="radio_{{qid+'_'+item.id}}" wx:for="{{selectitems}}" wx:key="radio_{{index}}">
+      <radio class="shrink" hidden="{{true}}" id="radio_{{qid+'_'+item.id}}" name="id" value="{{item.id}}" />
+      <view class="select_item_icon">
+        <image wx:if="{{item.isselect==false}}" src="../../images/single_no.png" class="select_item_icon_image"></image>
+        <image wx:elif="{{item.isselect}}" src="../../images/single_yes.png" class="select_item_icon_image"></image>
+      </view>
+      <!--没有测试-->
+      <view wx:if="{{testtype==0}}" class="answer">
+        <view style="margin-right:40rpx">{{item.item}}</view>
+      </view>
+      <!--已经测试-->
+      <view wx:else class="answer  {{(item.isselect==1&&item.answeris!=1)?'user_selected':''}}">
+         <view style="margin-right:40rpx"  style="width:68%;">{{item.item}}</view>
+         <!-- <view wx:if="{{item.answeris==1}}" class="{{item.answeris==1?'right_answer':''}}">【正确答案】</view>
+        <view wx:elif="{{item.isselect==1}}">【您的答案】</view>   -->
+      </view>
+    </label>
+  </radio-group>
+</template>
+<!--多选模板-->
+<template name="multiselect_question">
+  <checkbox-group bindchange="checkboxChange" id="{{qid}}" name="{{qid}}" class="radio-group">
+    <label class="choice_item" for="checkbox_{{qid+'_'+item.id}}" wx:for="{{selectitems}}" wx:key="checkbox_{{index}}">
+      <checkbox class="shrink" hidden="{{true}}" id="checkbox_{{qid+'_'+item.id}}" name="id" value="{{item.id}}" />
+      <view class="select_item_icon">
+        <image wx:if="{{item.isselect==false}}" src="../../images/multiselect_no.png" class="select_item_icon_image"></image>
+        <image wx:elif="{{item.isselect}}" src="../../images/multiselect_yes.png" class="select_item_icon_image"></image>
+      </view>
+      <view wx:if="{{testtype==0}}" class="answer">
+        <view style="margin-right:40rpx">{{item.item}}</view>
+      </view>
+      <view wx:else class="answer {{(item.isselect==1&&item.answeris!=1)?'user_selected':''}}">
+         <view style="margin-right:40rpx"  style="width:68%;">{{item.item}}</view>
+        <!-- <view wx:if="{{item.answeris==1}}" style="display:flex;align-item:center" class="{{item.answeris==1?'right_answer':''}}">【正确答案】</view>
+        <view wx:elif="{{item.isselect==1}}">【您的答案】</view>  -->
+
+      </view>
+    </label>
+  </checkbox-group>
+</template>
+<!-- 问答模板 -->
+<template name="text_question">
+  <label class="text_question_box">
+    <textarea class="text_question" id="{{qid}}" name="{{qid}}" show-confirm-bar="true" bindblur="textChange" bindconfirm="textChange">
+    {{answerTxt}}
+    </textarea>
+  </label>
+</template>

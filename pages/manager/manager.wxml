@@ -1,0 +1,25 @@
+<import src="../totalShow/totalShow.wxml"/>
+<view class="person_list" scroll-y style="width:100%;" bindscrolltolower="reachBottom">
+  <view hidden="{{!noPage}}" bindtap="toManageDetail" data-url="../managerDetail/managerDetail?filter={{item.status}}&id={{item.id}}" class="person_item" wx:for="{{auditingList}}" wx:key="auditing_{{index}}">
+    <view class="person_container">
+      <view class="person_photo">
+        <image wx:if="{{item.head_img}}" src="{{item.head_img}}"></image>
+      </view>
+      <view class="person_info">
+        <view class="person_name">{{item.username}}</view>
+        <!--
+        <view wx:if="{{item.status=='1'}}" style="background-color:#30B5F2" class="person_statue">
+          管理员
+        </view>-->
+        <view wx:if="{{item.status=='1'}}" style="background-color:#FFB900"  class="person_statue">
+          经销员
+        </view>
+        <view wx:elif="{{item.status=='0'}}" class="person_statue">
+          待审核
+        </view>
+      </view>
+    </view>
+     <view class="to_next"></view>
+  </view>
+  <template is="page_toast" data="{{noPage:noPage,img:'notice.png',msg:'没有更多数据',top:30,outTop:356}}"/>
+</view>

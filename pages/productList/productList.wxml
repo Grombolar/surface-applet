@@ -1,0 +1,27 @@
+<!--pages/playBookList/playBookList.wxml-->
+<!--引入导航模板-->
+<import src="../tabbar/tabbar.wxml" />
+<!--使用导航模板-->
+<template is="tabbar" data="{{tabbar}}" />
+<!--容器-->
+<view>
+  <scroll-view scroll-y class="rpy_list" bindscrolltolower="scrollBottom">
+    <block wx:for="{{journalList}}" wx:key="list_{{index}}">
+      <navigator url="/pages/playBook/playBook?id={{item.id}}&type={{item.type}}" class="product_item">
+        <view class="product_img_box">
+          <image wx:if="{{item.img_url!=''}}" src="{{imgUrl+ ((item.img_url.length > 4)? item.img_url : '/uploads/images/news/default.png')}}" class="product_img"></image>
+        </view>
+        <view class="product_info_box">
+          <view class="product_title">{{item.name}}</view>
+          <view class="product_summary">{{item.summary}}</view>
+          <view class="product_date">
+            <view class="clock_box">
+              <image class="clock_box_img" src="../../images/clock.png"></image>
+            </view>
+            <view>{{item.create_at}}</view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </scroll-view>
+</view>

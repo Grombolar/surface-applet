@@ -1,0 +1,16 @@
+<import src="../search/search.wxml" />
+
+<template name="nairInfo">
+  <navigator url="/pages/playBook/playBook?id={{item.id}}&type={{item.type}}" class="journal_item" wx:for="{{journalList}}" wx:key="list_{{index}}">
+    <view class="journal_info_box">
+      <view class="journal_title  one_line">{{item.name}}</view>
+      <view class="journal_summary one_line">{{item.summary}}</view>
+      <view class="journal_date">
+        <view class="clock_box">
+          <image class="clock_box_img" src="../../images/clock.png"></image>
+        </view>
+        <view>{{item.create_at}}</view>
+      </view>
+    </view>
+  </navigator>
+</template>

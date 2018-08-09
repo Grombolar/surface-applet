@@ -1,0 +1,78 @@
+/* earnPoints.wxss */
+page
+{
+  background-color: #F7FAFD;
+}
+/*banner图**/
+.header,.header>image
+{
+  width: 100%;
+  height: 400rpx;
+}
+.earn_info
+{
+  width: 100%;
+  box-sizing: border-box;
+  padding:0 30rpx;
+}
+.earn_list
+{
+  height: 180rpx;
+  width: 690rpx;
+  box-sizing: border-box;
+  background-color: white;
+  margin-top:20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 24rpx;
+}
+.left
+{
+   display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon_box
+{
+  width: 124rpx;
+  height: 124rpx;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon_box>image
+{
+  width: 124rpx;
+  height: 124rpx;
+  border-radius: 50%;
+}
+.earn_explain
+{
+  color:#666;
+  font-size: 26rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left:22rpx;
+}
+.status_box
+{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 74rpx;
+}
+.score_num
+{
+  color:#ffb900;
+  font-size: 30rpx;
+  font-weight: bolder;
+}
+.status
+{
+  color:#f26137;
+  font-size: 24rpx;
+}

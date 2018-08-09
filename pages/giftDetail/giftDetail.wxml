@@ -1,0 +1,78 @@
+
+<import src="./giftTemp.wxml" />
+<view hidden="{{!showPages}}">
+<!--礼品图片展示-->
+<view class="gift_pic_show"  style="background-image: url({{giftDetailData.img_url}});">
+  <!--<image  wx:if="{{giftDetailData.img_url!=undefined}}" src="{{imgUrl+giftDetailData.img_url}}"></image>-->
+</view>
+<!--礼品名称和积分数-->
+<view class="gift_show_info">
+  <view class="gift_base_info">
+    <view class="gift_desc">
+      {{giftDetailData.name}}
+    </view>
+    <view class="gift_price">市场价 ¥{{giftDetailData.market}}<view class="integral_num">{{giftDetailData.price}}积分</view></view>
+    
+  </view>
+  <!--礼品基本信息-->
+  <template wx:if="{{giftbase!=0}}" is="gift_info_list" data="{{giftbase}}"></template>
+ 
+</view>
+ <!--礼品详情-->
+  <view class="gift_title_box">
+    <text style="padding:0 22rpx">礼品详情</text>
+  </view>
+<view class="gift_detail_rich">
+  <rich-text nodes="{{giftDetailData.detail}}" />
+</view>
+<view class="exchange">
+
+  <!--<button class="exchange_btn" id="{{disabledBtn}}" style="background-color:{{!disabledBtn?'#ccc':''}}"  bindtap="toExchangePage">{{!disabledBtn?'无库存':'立即兑换'}}</button>-->
+<button wx:if="{{disabledBtn}}" class="exchange_btn" id="{{disabledBtn}}"  bindtap="toExchangePage">{{!disabledBtn?'无库存':'立即兑换'}}</button>
+<button wx:else class="exchange_btn"  style="background-color:#ccc"  >无库存</button>
+</view>
+</view>
+<!--地址弹框-->
+<view class="mask" wx:if="{{showMask}}"   bindtap="hideAddress"></view>
+<view class="confirm_exchange" style="height:{{hiddenHeader?330:460}}rpx;"  animation="{{animationData}}">
+  <!--地址-->
+  <view class="address_box" hidden="{{hiddenHeader}}">
+    <view class="address_detail_box" >
+      <view  class="address_container">
+        <view class="address_name">
+          <view>收货</view>
+          <view>地址</view>
+        </view>
+        <view wx:if="{{address!=null}}" class="addres_detail">
+          <view class="address_top"><text style="padding-right:40rpx;">{{address.userName}}</text><text>{{address.telNumber}}</text></view>
+          <view class="address_bottom">{{address.detailInfo}}</view>
+        </view>
+        <view wx:else class="addres_detail">
+          <view class="classname">请选择收货地址</view>
+        </view>
+      </view>
+      <view class="address_manager" bindtap="addAddress">
+        <image src="../../images/remark.png"></image>
+      </view>
+    </view>
+    <view class="bottom_line">
+      <image src="../../images/line.png"></image>
+    </view>
+  </view>
+  <view class="exchange_num_box">
+    <view class="exchange_child_box">
+      <view class="exchange_num_title">兑换数量：</view>
+      <view class="select_box">
+        <text class="reduse control_box" bindtap="updateTotal" data-type="reduce">-</text>
+        <text class="add_num control_box">{{total}}</text>
+        <text class="increase control_box" data-type="increase" bindtap="updateTotal" id="{{stock}}">+</text>
+      </view>
+    </view>
+    <view class="use_score">
+      {{giftDetail.price*total}}积分
+    </view>
+  </view>
+  <view class="comfirm_box">
+    <button bindtap="confirmExchange" id="{{disabledBtn}}" style="background-color:{{!disabledBtn?'#ccc':''}}">{{!disabledBtn?'无库存':'确认兑换'}} </button>
+  </view>
+</view>

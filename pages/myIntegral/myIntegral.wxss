@@ -1,0 +1,171 @@
+/* myIntegral.wxss */
+page
+{
+  background-color: #F7FAFD;
+}
+.header
+{
+  width: 100%;
+  height: 240rpx;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding-left:40rpx;
+  margin-bottom: 20rpx;
+}
+.user_photo>image
+{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.integral_style
+{
+  margin-left: 20rpx;
+}
+.my_integral_style
+{
+  color:white;
+  font-size: 36rpx;
+  line-height: 36rpx;
+  
+}
+.integral_item
+{
+  display: inline-flex;
+  align-items: center;
+}
+.integral_icon 
+{
+  width: 24rpx;
+  height: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6rpx;
+}
+.integral_icon>image
+{
+  width: 24rpx;
+  height: 20rpx;
+}
+.integral_name
+{
+  font-size: 24rpx;
+  color:#fff;
+  line-height: 24rpx;
+}
+/**积分导航**/
+.nav_integral
+{
+  height: 90rpx;
+  width: 100%;
+  background-color: white;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 24rpx;
+  
+   /*box-shadow: 0 -4rpx 6rpx 6rpx #eee;box-shadow:0px 5rpx 0rpx 2rpx #ddd;
+  box-shadow: 水平阴影 垂直阴影 模糊距离 阴影大小 阴影颜色  内部阴影;*/
+}
+.nav_bar
+{
+  width: 152rpx;
+  text-align: center;
+  line-height: 90rpx;
+  height: 90rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color:#666666;
+}
+.select_bar
+{
+  border-bottom: 6rpx solid #30b5f2;
+  color:#30b5f2;
+}
+/*积分列表*/
+.integral_list
+{
+  width: 690rpx;
+  margin:  0 auto;
+  background-color: white;
+  box-sizing: border-box;
+  padding:0 22rpx;
+
+
+}
+.integral_child
+{
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24rpx 0;
+ 
+}
+.child_left
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width:80%;
+}
+child_image_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.child_top,.child_bottom
+{
+  display: inline-flex;
+  align-items: center;
+}
+.child_top .child_image_box>image
+{
+  width:24rpx;
+  height: 24rpx;
+  margin-right: 16rpx;
+}
+.child_top>text
+{
+  font-size:26rpx;
+  color:#666666;
+ 
+}
+.child_bottom
+{
+ display: inline-flex;
+  align-items: center;
+}
+.child_bottom .child_image_box>image
+{
+  width:24rpx;
+  height: 24rpx;
+  margin-right: 16rpx;
+ 
+}
+.text_1
+{
+  color:#f26137;
+  font-size: 26rpx;
+}
+.text_2
+{
+  color:#333333;
+  margin-left:16rpx;
+  width:310rpx;
+}
+.child_right
+{
+  font-size: 30rpx;
+  color:#333333;
+  width: 154rpx;
+}
+.bottom_line
+{
+  border-bottom:2rpx solid #F5F5F5;
+}

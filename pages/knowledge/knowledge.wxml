@@ -1,0 +1,40 @@
+<view class="article_box" hidden="{{!showPages}}">
+  <view class="article_title">{{articleDetail.name}}</view>
+  <view class="article_type_box">
+    <text>{{articleDetail.category_name}}</text>
+    <!-- <text>{{articleDetail.create_at}}</text> -->
+  </view>
+  <!-- <view class="article_secrit" style="position:relative;left:-12rpx">{{articleDetail.type=='1'?'【保密】':'【公开】'}} {{articleDetail.type=='1'?articleDetail.expire_time:''}}</view> -->
+  <view style="position:relative; overflow:hidden;margin-top:20rpx;">
+    <scroll-view  scroll-y class="articl_detail_scroll">
+      <view class="rich_text">
+        <rich-text nodes="{{articleDetail.detail}}"/>
+        <view class="video_box">
+          <video style="width:100%" wx:if="{{video_url!=''}}" src="{{video_url}}"></video>
+        </view>
+        <view class='showVideo'bindtap="showVideo">播放腾讯视频</view>
+        <block wx:if="{{show_video}}" >
+        <web-view class='webSize' src="https://v.qq.com/iframe/player.html?vid=b0340ba5xl7&tiny=0&auto=0"></web-view>
+        </block>
+      </view>
+    </scroll-view>
+     <!--<view style="top:{{top}}rpx;" class="secrecy" wx:if="{{articleDetail.type=='1'}}" >{{articleDetail.username+''+company}}</view>-->
+  </view>
+  <view class="article_download" wx:if="{{articleDetail.files!=0}}">
+    附件下载
+  </view>
+  <view class="download_box" wx:if="{{articleDetail.files!=0}}">
+    <view style=" border-top: 2rpx solid {{index==0?'#fff':'#F1F1F1'}};" class="download_item" wx:for="{{articleDetail.files}}" wx:key="article_{{index}}">
+      <view class="ellipsis">附件{{index+1}}: {{item.doc_name}}</view>
+      <view class="icon_items">
+        <view data-href="{{item.doc_url}}" bindtap="viewPDF" class="icon_box" >
+          <image style="width:26rpx;height:30rpx" src="../../images/check.png"></image>
+        </view>
+         <view bindtap="sendEmailPDF" class="icon_box" id="{{item.id}}">
+          <image style="width:30rpx;height:22rpx" src="../../images/sendsmail.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

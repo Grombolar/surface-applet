@@ -1,0 +1,55 @@
+<view hidden="{{hiddenPage}}">
+  <view class="header">
+    <image src="../../images/banner.png"></image>
+  </view>
+  <view class="earn_info">
+  <!--赚积分-->
+    <navigator url="../signIn/signIn" class="earn_list">
+      <view class="left">
+        <view class="icon_box">
+          <image src="../../images/paper.png"></image>
+        </view>
+        <view class="earn_explain">
+            <view class="classname" style="color:#333">每日签到赚积分</view>
+            <view class="classname">首页点击每日签到赚取积分</view>
+        </view>
+      </view>
+      <view class="status_box">
+        <view class="score_num">{{sign==0?0:'+'+sign}}</view>
+        <!--<view class="status">已完成</view>-->
+      </view>
+    </navigator>
+    <!--答题-->
+    <navigator url="../miniTest/miniTest" class="earn_list" wx:if="{{isShow}}">
+      <view class="left">
+        <view class="icon_box">
+          <image src="../../images/answer_q.png"></image>
+        </view>
+        <view class="earn_explain">
+            <view class="classname" style="color:#333">答题赚取积分</view>
+            <view class="classname">点击mini考答题赚取积分</view>
+        </view>
+      </view>
+      <view class="status_box">
+        <view class="score_num">{{answer==0?0:'+'+answer}}</view>
+        <!--<view class="status">已完成</view>-->
+      </view>
+    </navigator>
+    <!--抽奖-->
+    <navigator url="../game/game" class="earn_list" wx:if="{{game}}">
+      <view class="left">
+        <view class="icon_box">
+          <image src="../../images/lucky.png"></image>
+        </view>
+        <view class="earn_explain">
+            <view class="classname" style="color:#333">抽奖赚积分</view>
+            <view class="classname">点击百宝箱抽奖赚取积分</view>
+        </view>
+      </view>
+      <view class="status_box">
+        <view class="score_num">{{lucky==0?0:'+'+lucky}}</view>
+        <!--<view class="status">已完成</view>-->
+      </view>
+    </navigator>
+  </view>
+</view>

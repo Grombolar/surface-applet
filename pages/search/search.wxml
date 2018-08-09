@@ -1,0 +1,11 @@
+<!--pages/search/search.wxml-->
+<template name="search">
+    <form class="search_section" catchsubmit="formSubmit">
+      <view class="search_section_content">
+        <input class="search_box" name="keyWords" value="{{keyWords}}" placeholder="关键字搜索" confirm-type="search" bindconfirm="enterSubmit"/>
+        <button class="btn_search_box" formType="submit">
+          <image class="btn_search" src="/images/search.png"></image>
+        </button>
+      </view>
+    </form>
+</template>

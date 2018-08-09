@@ -1,0 +1,2 @@
+<!--pages/newArticle/newArticle.wxml-->
+ <web-view class='webSize' src="{{showUrl}}" bindmessage="controlAdjunct"></web-view>  

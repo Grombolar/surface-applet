@@ -1,0 +1,23 @@
+<!--认证成功-->
+<template name="succ">
+ <view class="succ_icon">
+    <icon  type="success" size="100" color="#32B5F2"/>
+  </view>
+  <view class="succ_text">恭喜您认证成功！</view>
+  <view class="succ_explain">
+  <!--
+    <navigator url="../center/center"  open-type="reLaunch">您可随时通过 <text style="color:#32B5F2">“我的”</text> 查看状态</navigator>-->
+    <view>{{msg}}</view>
+  </view>
+</template>
+<!--认证失败-->
+<template name="fail">
+ <view class="succ_icon">
+    <icon type="warn" size="100" color="#32B5F2"/>
+  </view>
+   <view class="succ_text">认证失败！</view>
+  <view class="succ_explain">
+    <!--<navigator url="../center/center"  open-type="reLaunch">您可随时通过 <text style="color:#32B5F2">“我的”</text> 查看状态</navigator>-->
+    <view>{{msg}}</view>
+  </view>
+</template>

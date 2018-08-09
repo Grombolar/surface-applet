@@ -1,0 +1,46 @@
+<navigator url="../giftDetail/giftDetail?id={{giftDetail.good_id}}"  class="order_item">
+  <view class="order_img">
+    <image wx:if="{{giftDetail.img_url}}" src="{{imgUrl+giftDetail.img_url}}"></image>
+  </view>
+  <view class="order_info">
+    <view class="order_title">
+      <view class="one_line" style="width:450rpx">{{giftDetail.name}}</view>
+      <view wx:if="{{giftDetail.status==0}}" class="order_status">待发货</view>
+      <view wx:elif="{{giftDetail.status==1}}" class="order_status">已发货</view>
+      <view wx:elif="{{giftDetail.status==2}}" class="order_status">已完成</view>
+         <!--1代发货2已发货3已完成-->
+    </view>
+    <view class="order_integral">
+      {{giftDetail.price}}积分<text style="padding:0 4rpx;">×</text>{{giftDetail.num}}
+    </view>
+    <view class="order_time">
+      <text class="order_date">{{giftDetail.create_at}}</text>
+    </view>
+  </view>
+</navigator>
+<view class="order_type">
+  <text wx:if="{{giftDetail.type=='2'}}" style="padding:0 10rpx">礼券信息</text> 
+  <text wx:if="{{giftDetail.type=='1'}}" style="padding:0 10rpx">物流信息</text> 
+</view>
+<!--礼券和物流-->
+<view class="gift_token_list">
+  <view style="background-image: url({{imgUrl+'/images/static/'}}{{giftDetail.type=='2'?'card_gb.png':'wl_bg.png'}});" class="gift_token box_shadow" wx:for="{{giftDetail.card}}" wx:key="car_{{index}}">
+    <!--卡券-->
+    <view wx:if="{{giftDetail.type=='2'}}" class="gift_token_box">
+      <view  wx:if="{{item.cardvalue}}" class="gift_token_value">{{item.cardvalue}}积分</view>
+      <view wx:if="{{item.cardname}}" class="gift_token_name  ellipsis">{{item.cardname}}</view>
+    </view>
+    <view wx:if="{{giftDetail.type=='2'}}" class="gift_token_id">
+      <view>券号：{{item.cardid}}</view>
+    </view>
+     <!--物流-->
+    <view  wx:if="{{giftDetail.type=='1'}}" class="token_box" style="top:30rpx;padding-left:20rpx;">
+      <view  wx:if="{{item.cardvalue}}" class="token_value fact ellipsis">{{item.cardvalue}}</view>
+      <view wx:if="{{item.cardname}}" class="token_name">{{item.cardname}}</view>
+    </view>
+    <view wx:if="{{giftDetail.type=='1'}}" class="gift_token_id ">
+      <view wx:if="{{item.cardid}}" class="order_num one_line">快递单号：{{item.cardid}}</view>
+      <view wx:else>待发货</view>
+    </view>
+  </view>
+</view>

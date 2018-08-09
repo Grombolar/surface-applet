@@ -1,0 +1,314 @@
+/* giftDetail.wxss */
+page
+{
+  background-color: #F7FAFD;
+  display: table;
+  padding-bottom: 150rpx;
+}
+.gift_pic_show
+{
+  width: 750rpx;
+  height: 750rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size:100% 100%;
+}
+.gift_pic_show>image
+{
+  width: 100%;
+  min-height: 750rpx;
+  /*width: 750rpx;*/
+}
+.gift_show_info
+{
+  width: 100%;
+  box-sizing: border-box;
+  padding-left:30rpx;
+  background-color: white;
+  margin: 0 auto;
+  padding-top:20rpx;
+  box-shadow:0px -4rpx 10rpx 2rpx #eee;
+  padding-bottom:20rpx;
+}
+.gift_base_info
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 20rpx;
+  position: relative;
+  /*height:128rpx;*/
+}
+.gift_desc
+{
+  color:#333333;
+  font-size: 30rpx;
+}
+.gift_price
+{
+  color:#f35b5b;
+  font-size: 28rpx;
+  position:relative;
+margin-top:10rpx;
+
+}
+.integral_num
+{
+  position: absolute;
+  right:30rpx;
+ top:-10rpx;
+  color:#f25022;
+  font-size: 36rpx;
+}
+/*基本信息列表**/
+.gift_base_box
+{
+  box-sizing: border-box;
+  padding-top:30rpx;
+  border-top:2rpx solid #F8F8F8;
+  padding-right: 30rpx;
+  padding-bottom: 0rpx;
+}
+.base
+{
+  color:#333333;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+}
+.base_item
+{
+  color:#666666;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+  flex-direction:column;
+
+}
+.base_item text
+{
+  line-height: 40rpx;
+}
+.base_item text:nth-child(1)
+{
+ font-weight: bold;
+}
+.gift_title_box
+{
+  width:100%;
+  font-size: 28rpx;
+  color:#666;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:37rpx;
+  margin-bottom: 34rpx;
+}
+.gift_title_box::before,.gift_title_box::after
+{
+  content: "";
+  display: inline-block;
+  width:118rpx;
+  border-top:2rpx solid #D9DBDD;
+}
+/*富文本*/
+.gift_detail_rich
+{
+  width: 750rpx;
+  overflow: hidden;
+  padding:0 30rpx;
+  background-color: white;
+  box-sizing: border-box;
+}
+.exchange
+{
+  position: fixed;
+  left:0;
+  bottom: 0rpx;
+  width: 100%;
+  height: 150rpx;
+  background-color: #F7FAFD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*兑换按钮*/
+.exchange>button
+{
+  width: 690rpx;
+  margin: 0 auto;
+  background-color:#32B5F2;
+  color:#fff;
+  font-size: 36rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+
+/******立即对换******/
+.mask
+{
+  height:100vh;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  z-index: 0
+}
+.confirm_exchange
+{
+  background-color: #fff;
+  position: fixed;
+  bottom: -460rpx;
+  left: 0;
+  right: 0;
+  height:460rpx;
+  z-index: 10000;
+  opacity: 0;
+}
+.address_box
+{
+  height: 150rpx;
+  width:100%;
+  box-sizing: border-box;
+  padding-top:26rpx;
+  position: relative;
+}
+.address_name
+{
+  width:80rpx;
+  color:#666666;
+  font-size: 26rpx;
+  box-sizing: border-box;
+  border-right: 2rpx solid #B5B5B5;
+}
+.address_detail_box
+{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 690rpx;
+  margin:  0 auto;
+}
+.addres_detail
+{
+  color:#666666;
+  font-size: 26rpx;
+  margin-left:30rpx;
+}
+.address_container
+{
+  display: flex;
+  align-items: center;
+}
+.address_manager
+{
+  width:64rpx;
+  height:64rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.address_manager>image
+{
+  width:32rpx;
+  height:34rpx;
+}
+.bottom_line
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.bottom_line>image
+{
+  width: 100%;
+  height: 10rpx;
+}
+/*兑换数量*/
+.exchange_num_box
+{
+  width: 100%;
+  padding:0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top:56rpx;
+}
+.exchange_child_box
+{
+  display: flex;
+  align-items: center;
+}
+.exchange_num_title
+{
+  color:#333;
+  font-size: 26rpx;
+}
+.control_box
+{
+  display: inline-flex;
+  width: 44rpx;
+  height: 44rpx;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color:#333333;
+  font-size: 30rpx;
+  line-height: 44rpx;
+}
+.reduse
+{
+ border:2rpx solid #D6D6D6;
+}
+.add_num
+{
+ border-top:2rpx solid #D6D6D6;
+ border-bottom:2rpx solid #D6D6D6;
+}
+.increase
+{
+  border:2rpx solid #D6D6D6;
+}
+.use_score
+{
+  color:#f25022;
+  font-size: 36rpx;
+}
+/**确认兑换按钮*/
+.comfirm_box
+{
+  margin-top:56rpx;
+}
+.comfirm_box>button
+{
+  width: 690rpx;
+  height: 90rpx;
+  color:#fff;
+  font-size: 36rpx;
+  background-color: #32B5F2;
+  line-height: 90rpx;
+}
+.address_top
+{
+  position: relative;
+  top:-10rpx;
+}
+.address_bottom
+{
+   position: relative;
+  top:10rpx;
+}

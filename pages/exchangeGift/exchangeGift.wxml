@@ -1,0 +1,3 @@
+<import src="./exchangeTemp.wxml" />
+
+<template wx:if="{{!showFlag}}" is="{{warning==1?'gift_succ':'gift_card_succ'}}" data="{{cardInfo}}"></template>

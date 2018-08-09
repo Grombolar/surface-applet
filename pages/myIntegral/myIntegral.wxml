@@ -1,0 +1,54 @@
+<import src="../totalShow/totalShow.wxml"/>
+
+<!--个人积分-->
+<view class="header" style="background: url({{imgUrl}}/images/static/center_bg.png) no-repeat center center;">
+  <view  class="user_photo">
+    <image wx:if="{{photoImg!=null}}" src="{{photoImg}}"></image>
+  </view>
+  <view class="integral_style">
+    <view class="my_integral_style">
+     <text style="margin-right:10rpx;">{{integral}}</text><text>积分</text>
+    </view>
+    <view class="integral_item">
+      <view class="integral_icon">
+        <image src="../../images/integral_icon_2.png"></image>
+      </view>
+      <view class="integral_name">
+        积分规则
+      </view>
+    </view>
+  </view>
+</view>
+<!--积分种类导航-->
+<view class="nav_integral" >
+  <view  wx:for="{{filterNav}}" wx:key="nav_{{index}}" bindtap="filterButton" id="{{item.filter}}" class="nav_bar {{item.selected?'select_bar':''}}">{{item.btnname}}</view>
+</view>
+<!--积分列表-->
+<scroll-view scroll-y  lower-threshold="0" bindscrolltolower="scrollPage" class="integral_list" style="height:66vh;background-color:{{!noPage?'#F7FAFD':''}}">
+  <view hidden="{{!noPage}}"  wx:for="{{recordList}}" wx:key="record_{{index}}" class="integral_child bottom_line">
+    <view class="child_left">
+      <view class="child_top">
+        <view class="child_image_box">
+          <image src="../../images/clock.png" ></image>
+        </view>
+        <text>时间 {{item.create_at}}</text> 
+      </view>
+      <view class="child_bottom">
+       <view class="child_image_box">
+        <image src="../../images/integral_icon.png" ></image>
+      </view>
+        <view wx:if="{{item.category=='1'}}" class="text_1">签到</view>
+        <view wx:if="{{item.category=='2'}}" class="text_1">答题</view>
+        <view wx:if="{{item.category=='3'}}" class="text_1">抽奖</view>
+        <view wx:if="{{item.category=='4'}}" class="text_1">系统操作</view>
+        <view wx:if="{{item.category=='5'}}" class="text_1">兑换商品</view>
+        <view class="text_1 text_2 one_line">{{item.name}}</view>
+      </view>
+    </view>
+    <view class="child_right">
+      {{item.type=='reduce'?'-':'+'}}{{item.change}}积分
+    </view>
+  </view>
+  <template is="page_toast" data="{{noPage:noPage,img:'notice.png',msg:'没有更多数据',top:30,outTop:256}}"/>
+</scroll-view>
+

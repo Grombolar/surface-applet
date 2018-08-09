@@ -1,0 +1,2 @@
+<!--pages/newKnowledge/newKnowledge.wxml-->
+   <web-view class='webSize' src="{{showUrl}}"></web-view> 

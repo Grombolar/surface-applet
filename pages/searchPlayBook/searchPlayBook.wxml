@@ -1,0 +1,35 @@
+<!--pages/searchPlayBook/searchPlayBook.wxml-->
+<!-- 引入搜索模板 -->
+<import src="../search/search.wxml" />
+
+<!--使用导航模板-->
+<view class="search_header">
+  <template is="search" data="{{keyWords}}" />
+</view>
+
+<view>
+
+  <view class="default_keyword_box" wx:if="{{isDefault}}">
+    <text class="default_keyword" bindtap="searchDefault" data-index="{{index}}" wx:for="{{defaultKeyWordList}}" wx:key="item">{{item}}</text>
+  </view>
+
+  <scroll-view scroll-y class="rpy_list" bindscrolltolower="scrollBottom" wx:if="{{!isDefault}}">
+    <navigator url="/pages/playBook/playBook?id={{item.id}}&type={{item.type}}" class="search_item" wx:for="{{searchList}}" wx:key="list_{{index}}">
+      <view class="search_img_box">
+        <image wx:if="{{item.img_url!=''}}" src="{{imgUrl+ ((item.img_url.length > 4)? item.img_url : '/uploads/images/news/default.png')}}" class="search_img"></image>
+      </view>
+      <view class="search_info_box">
+        <view class="search_title  one_line">{{item.name}}</view>
+        <view class="search_summary one_line">{{item.summary}}</view>
+        <view class="search_date">
+          <!-- <view class="clock_box">
+            <image class="clock_box_img" src="../../images/clock.png"></image>
+          </view> -->
+          <view class="playbook_type_box" wx:if="{{item.type == 0}}">Playbook</view>
+          <view class="playbook_type_box" wx:elif="{{item.type == 1}}">产品</view>
+          <view class="playbook_type_box" wx:elif="{{item.type == 2}}">解决方案</view>
+        </view>
+      </view>
+    </navigator>
+  </scroll-view>
+</view>

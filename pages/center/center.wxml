@@ -1,0 +1,119 @@
+<import src="../tabbar/tabbar.wxml" />
+<!--使用导航模板-->
+<template is="tabbar" data="{{tabbar}}" />
+<!--个人信息-->
+<view class="header" style="background: url({{imgUrl}}/images/static/center_bg.png) no-repeat center center;">
+  <image class="photo" wx:if="{{userInfo.avatarUrl}}" src='{{userInfo.avatarUrl}}'></image>
+  <view wx:if="{{showUserInfo}}" class="user_info">
+    <view class="user_name">
+      <view>{{userInfo.nickName}}</view>
+      <view wx:if="{{managername==2}}" class="user_manager">管理员</view>
+      <view wx:elif="{{managername==1}}" class="user_manager">经销员</view>
+      <view wx:elif="{{managername==3}}" class="user_manager">AE用户</view>
+      <view wx:else class="user_manager">普通用户</view>
+    </view>
+    <view class="user_company">{{company}}</view>
+  </view>
+  <navigator wx:if="{{showUserInfo}}" url="../personalData/personalData?src=person" class="user_box">
+    <text>个人资料</text>
+    <image src="../../images/user_info.png" class="user_info_icon"></image>
+  </navigator>
+  <!--
+  <navigator wx:if="{{showUserInfo}}" hidden="{{isAuditing}}" style="top:100rpx;" url="../personalData/personalData??src=apply" class="user_box">
+    <text>申请经销员</text>
+    <image src="../../images/apply.png" class="user_info_icon"></image>
+  </navigator>-->
+  <view wx:if="{{!showUserInfo}}" class="login_box">
+    <image src="../../images/login_no.png" style="width:120rpx;height:120rpx;">
+    </image>
+    <button open-type="getUserInfo" class="login_btn" bindgetuserinfo="getUserInfo" size="mini">点击登录</button>
+  </view>
+</view>
+<!--我的积分-->
+<navigator url="../myIntegral/myIntegral" class="my_integral_box">
+  <view class="my_integral_title">
+    <image class="integral_icon" src="../../images/integral_icon.png"></image>
+    <text class="my_integral">我的积分</text>
+    <text class="integral">{{myIntegral}}</text>
+  </view>
+  <view class="check_integral_title">
+    <text class="check_title">查看积分记录</text>
+    <text class="check_point"></text>
+  </view>
+</navigator>
+
+<!-- 我的活动 -->
+<navigator url="../myActivityList/myActivityList" class="my_integral_box">
+  <view class="my_integral_title">
+    <image class="integral_icon" style="height:30rpx" src="../../images/activity.png"></image>
+    <text class="my_integral">我的活动<text class="integral">{{activity > 0? activity:0}}个</text></text>
+  </view>
+  <view class="check_integral_title">
+    <text class="check_title">查看我的活动</text>
+    <text class="check_point"></text>
+  </view>
+</navigator>
+
+<!--我的订单-->
+<view class="my_order_box">
+  <navigator url="../myOrder/myOrder" class="my_integral_box my_order">
+    <view class="my_integral_title">
+      <image class="integral_icon" style="height:30rpx" src="../../images/order_list.png"></image>
+      <text class="my_integral">我的订单</text>
+    </view>
+    <view class="check_integral_title">
+      <text class="check_title">查看更多订单</text>
+      <text class="check_point"></text>
+    </view>
+  </navigator>
+  <view class="my_order_items">
+    <navigator url="../myOrder/myOrder?filter=2" class="order_item">
+      <view class="image_icon_box">
+        <image src="../../images/gift_order.png" class="order_icon"></image>
+        <view wx:if="{{gift}}" class="image_counts">{{gift}}</view>
+      </view>
+      <view class="gift_font">礼券订单</view>
+    </navigator>
+    <view class="middle_line"></view>
+    <navigator url="../myOrder/myOrder?filter=1" class="order_item">
+      <view class="image_icon_box">
+        <image src="../../images/fact_order.png" class="order_icon"></image>
+        <view wx:if="{{good}}" class="image_counts">{{good}}</view>
+      </view>
+      <view class="gift_font">实物订单</view>
+    </navigator>
+  </view>
+</view>
+
+<!--经销商管理员-->
+<view class="my_order_box" wx:if="{{manage}}">
+  <navigator url="../manager/manager" class="my_integral_box my_order">
+    <view class="my_integral_title">
+      <image class="integral_icon" style="height:28rpx" src="../../images/manager.png"></image>
+      <text class="my_integral">经销商管理员</text>
+    </view>
+  </navigator>
+  <view class="my_order_items">
+    <navigator url="../manager/manager?filter=1" class="order_item">
+      <view class="image_icon_box">
+        <image src="../../images/dsh.png" class="order_icon"></image>
+        <view wx:if="{{wait}}" class="image_counts">{{wait}}</view>
+      </view>
+      <view class="gift_font">待审核</view>
+    </navigator>
+    <view class="middle_line"></view>
+    <navigator url="../manager/manager?filter=2" class="order_item">
+      <view class="image_icon_box">
+        <image src="../../images/ysh.png" class="order_icon"></image>
+        <view wx:if="{{already}}" class="image_counts">{{already}}</view>
+      </view>
+      <view class="gift_font">已审核</view>
+    </navigator>
+  </view>
+</view>
+<view class="apply_nav">
+  <navigator wx:if="{{managername < 1}}" hidden="{{isAuditing}}" url="../personalData/personalData??src=apply" style="border-bottom:2rpx solid #DEE1E3;">
+    <image style="width:29rpx;height:29rpx" src="../../images/manager.png" class="user_info_icon"></image>
+    <text style="color:#999;padding-left:8rpx">申请经销员</text>
+  </navigator>
+</view>

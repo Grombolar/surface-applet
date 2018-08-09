@@ -1,0 +1,31 @@
+<template name="test_item">
+  <view class="test_item_box">
+    <navigator style="border-color:{{item.teststatus==1?'#F25123':''}}" wx:for="{{tempData}}" wx:key="test_{{index}}"  url="../testQuestions/testQuestions?id={{item.id}}&teststatus={{item.teststatus}}&nid={{item.nid}}&title={{item.examstatus==2?'专题考':item.examstatus==1?'周考':''}}&month={{item.day}}&testname={{item.title}}&examstatus={{item.examstatus}}" class="test_item {{item.teststatus==2?'no_pass':''}}">
+      <!--日考-->
+      <image wx:if="{{item.examstatus==0}}" src="../../images/day.png" class="test_item_icon"></image>
+      <!--周考-->
+      <image wx:if="{{item.examstatus==1}}" src="../../images/week.png" class="test_item_icon"></image>
+      <!--专题考-->
+      <image wx:if="{{item.examstatus==2}}" src="../../images/zt.png" class="test_item_icon"></image>
+      <text class="test_item_date">{{item.day}}</text>
+      <!--通过-->
+      <image wx:if="{{item.teststatus==1}}" class="answer_status" src="../../images/ok.png"></image>
+       <!--未通过-->
+      <image wx:if="{{item.teststatus==2}}"  class="answer_status" src="../../images/false.png"></image>
+      <view class="test_status {{item.teststatus==2?'no_pass_text':''}}">
+        {{item.teststatus==0?'':item.teststatus==1?'已通过':'未通过'}}
+      </view>
+      <view class="test_result {{item.teststatus==2?'no_pass_text':''}}">
+      <!--{{item.teststatus==0?item.integral:'+'+item.integral}}分-->  
+        <text wx:if="{{item.teststatus==0}}">{{item.integral}}分</text>
+        <text wx:if="{{item.teststatus!=0}}">+</text>
+        <text wx:if="{{item.teststatus!=0}}">{{item.integral}}分</text>
+        
+      </view>
+      <view wx:if="{{item.examstatus==2}}"  class="title_pos one_line">
+        {{item.title}}
+      </view>
+    </navigator>
+    
+  </view>
+</template>

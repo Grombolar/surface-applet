@@ -1,0 +1,268 @@
+/* pages/questionnaire/questionnaire.wxss */
+
+page {
+  background-color: #f7fafd;
+  padding-top: 22rpx;
+  padding-bottom: 60rpx;
+  position: relative;
+}
+
+.test_paper {
+  width: 750rpx;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.question_container {
+  display: flex;
+  flex-direction: column;
+  padding: 25rpx 0;
+  background-color: white;
+  width: 690rpx;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+}
+
+.question_info {
+  display: flex;
+  width: 618rpx;
+  margin: 0 auto;
+  padding-left: 24rpx;
+  padding-right: 48rpx;
+}
+
+.remind_box {
+  display: flex;
+  align-items: flex-start;
+}
+
+.remind_img {
+  width: 24rpx;
+  height: 24rpx;
+  position: relative;
+  top: 4rpx;
+}
+
+.q_rules {
+  color: #333;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  padding-left: 16rpx;
+}
+
+/*问题样式*/
+
+.questions_items {
+  width: 690rpx;
+  margin: 0 auto;
+}
+
+.question {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.choice_item {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.select_item_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 22rpx;
+}
+
+.answer {
+  color: #666;
+  font-size: 26rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.select_item_icon_image {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30rpx;
+}
+
+.submit {
+  width: 690rpx;
+  margin: 30rpx auto;
+  background-color: #32b5f2;
+  color: white;
+  font-size: 36rpx;
+}
+
+.submit_isDo {
+  background-color: #ccc;
+}
+
+.right_answer {
+  color: #f25022;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.user_selected {
+  font-style: italic;
+  border-bottom: 2rpx solid #b9bbbd;
+}
+
+/*答题结果样式*/
+
+.answer_box {
+  width: 690rpx;
+  margin: 0 auto;
+  margin-bottom: 30rpx;
+  height: 322rpx;
+  display: table;
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.answer_right_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 322rpx;
+}
+
+.integral_add {
+  text-align: center;
+  color: #f25022;
+  font-size: 48rpx;
+  line-height: 48rpx;
+  margin-top: 94rpx;
+}
+
+.warning {
+  color: #f25022;
+  font-size: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  margin-top: 25rpx;
+}
+
+.result {
+  color: #666;
+  font-size: 26rpx;
+  line-height: 26rpx;
+  text-align: center;
+  margin-top: 25rpx;
+}
+
+.test_title {
+  font-size: 30rpx;
+  color: #0cf;
+  margin-left: 30rpx;
+  margin-bottom: 20rpx;
+  padding-left: 16rpx;
+  position: relative;
+}
+
+.test_title::before {
+  content: '';
+  display: block;
+  height: 28rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 10rpx;
+  width: 4rpx;
+  background-color: #0cf;
+}
+
+/* ---问答题问答框--- */
+
+.text_question_box {
+  width: 690rpx;
+  height: 260rpx;
+}
+
+.text_question {
+  width: 100%;
+  height: 200rpx;
+  padding: 20rpx;
+  margin: 30rpx 0;
+  border: solid 2rpx #b9bbbd;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #333;
+}
+
+/* ---提交成功后--- */
+
+.after_submit {
+  width: 750rpx;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 750rpx;
+  z-index: 3000;
+  display: none;
+}
+
+.after_show {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.submit_pic {
+  width: 750rpx;
+  height: 300rpx;
+  display: block;
+  margin-top: 200rpx;
+}
+
+.success_text {
+  display: block;
+  width: 300rpx;
+  height: 150rpx;
+  position: absolute;
+  left: 150rpx;
+  top: 200rpx;
+  border: solid 2rpx #aaa;
+  line-height: 150rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.submit_txt {
+  height: 100rpx;
+  font-size: 50rpx;
+  line-height: 100rpx;
+  color: #19adf1;
+  padding: 20rpx;
+}
+
+.copyurl {
+  width: 250rpx;
+  height: 80rpx;
+  background: #017dbf;
+  font-size: 28rpx;
+  color: #fff;
+  line-height: 80rpx;
+  align-items: center;
+}
+
+.activity_sing_btn ::after {
+  border: none;
+}

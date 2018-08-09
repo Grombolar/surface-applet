@@ -1,0 +1,16 @@
+<!--提示框-->
+<template name="show_node">
+  <view class="mark" hidden="{{!showToast}}">
+    <view class="node_box">
+      <image style="height:140rpx;width:180rpx;margin-top:100rpx" src="../../images/{{img}}.png"></image>
+      <text class="node_title">{{title}}</text>
+    </view>
+  </view>
+</template>
+<!--页面提示-->
+<template name="page_toast">
+   <view class="no_page" hidden="{{noPage}}" style="margin-top:{{outTop}}rpx;background-color:#F7FAFD">
+      <image style="width:220rpx;height:168rpx" src="../../images/{{img}}"></image>
+      <view style="color:#666666;font-size:30rpx;margin-top:{{top}}rpx;line-height:40rpx">{{msg}}</view>
+  </view>
+</template>

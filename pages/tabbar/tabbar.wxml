@@ -1,0 +1,20 @@
+<template name="tabbar">
+  <view class="tabbar_box">
+    <block wx:for="{{tabbar}}" wx:key="tabbar_{{index}}">
+      <view bindtap='selectBar' id="{{item.index }}" class="tabbar_item">
+        <view class="bar_imt_box">
+          <image class="tabbar_home" style="width:{{item.w}};height:{{item.h}}" src="{{item.selected==true?'../../images/'+item.icon_s:'../../images/'+item.icon}}"></image>
+        </view>
+        <view style="font-size:22rpx;color:{{item.selected==true?'#30b5f2':''}}">{{item.tabname}}</view>
+      </view>
+    </block>
+    <!-- <block wx:if="{{}}"> -->
+      <!-- <button  open-type="getUserInfo" bindgetuserinfo='bindAccredit' class="tabbar_item accreditBtn">
+        <view class="bar_imt_box">
+          <image class="tabbar_home" src="../../images/accredit.png"></image>
+        </view>
+        <view style="font-size:22rpx;">授权</view>
+      </button> -->
+    <!-- </block> -->
+  </view>
+</template>

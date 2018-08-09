@@ -1,0 +1,85 @@
+.test_item_box
+{
+  padding-top:24rpx;
+  padding-left: 24rpx;
+  background-color:white;
+  padding-right: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.test_item
+{
+  width: 230rpx;
+  height: 230rpx;
+  border:2rpx solid #CECECE;
+  border-radius: 10rpx;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30rpx;
+  padding-top:22rpx;
+
+}
+.test_item_icon
+{
+  width: 104rpx;
+  height: 94rpx;
+  position: absolute;
+  top:-6rpx;
+  left: -2rpx;
+}
+.test_item_date
+{
+  position: absolute;
+  right: 14rpx;
+  top:14rpx;
+  color:#666666;
+  font-size: 26rpx;
+  line-height: 26rpx;
+}
+.test_status
+{
+  font-size: 36rpx;
+  color:#f25022;
+  font-weight: bold;
+}
+.test_result
+{
+  font-size: 36rpx;
+  color:#f25022;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.no_pass
+{
+  background-color: #CCCCCC;
+}
+.no_pass_text
+{
+  color:white !important;
+}
+.answer_status
+{
+  width:48rpx;
+  height: 48rpx;
+  position: absolute;
+  bottom:-3rpx;
+  right:-5rpx;
+}
+.title_pos
+{
+  position: absolute;
+  bottom: 9rpx;
+  left:10%;
+  color:#666;
+  font-size:30rpx;
+  width: 80%;
+  margin:0 auto;
+  text-align: center;
+}

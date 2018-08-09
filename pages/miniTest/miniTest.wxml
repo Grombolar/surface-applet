@@ -1,0 +1,30 @@
+<import src="../totalShow/totalShow.wxml"/>
+<!-- <template is="show_node" data="{{showToast:showToast,title:title,img:'notice_2'}}"/> -->
+<import src="../tabbar/tabbar.wxml" />
+<!--引入状元考模板-->
+<import src="./number_one_scholar.wxml" />
+<!--引入考试规则模板-->
+<import src="./test_rules.wxml" />
+<!--引入错题本模板-->
+<import src="./test_wnote.wxml" />
+<!--引入试题模板-->
+<import src="./test_item.wxml" />
+<!--使用导航模板-->
+<template is="tabbar" data="{{tabbar}}" />
+<!--容器-->
+<view class="mini_container">
+  <!--Mini考导航-->
+  <scroll-view scroll-y  class="mini_bar_box">
+    <block wx:for="{{navBar}}" wx:key="item_{{index}}">
+      <view bindtap="selectNabBar"  data-id="{{item.id}}" class="mini_bar {{item.selected?'selected_bar':''}}">
+          {{item.day}}
+      </view>
+    </block> 
+  </scroll-view>
+  <!--mini考相关详细列表-->
+  <scroll-view scroll-y class="mini_list" style="background-color:{{temp=='number_one_scholar'?'#F7FAFD':''}};  position: relative;"  bindscrolltolower="scrollLoadMore">
+  <!--使用状元考模板 number_one_scholar-->
+  <!--考试规则 test_rules-->
+  <template is="{{temp}}" data="{{tempData}}"/>
+  </scroll-view>  
+</view>

@@ -1,0 +1,365 @@
+/* pages/home/home.wxss */
+@import '../tabbar/tabbar.wxss';
+page
+{
+  background-color: #F5F9FC;
+  padding-bottom: 100rpx;
+}
+/*****banner*****/
+.banner
+{
+  width: 100%;
+  height: 370rpx;
+}
+.banner_item
+{
+  width: 100%;
+  height: 370rpx;
+}
+.banner_item image
+{
+  width: 100%;
+  height: 370rpx;
+}
+/****导航*****/
+.nav
+{
+  width:92%;
+  padding:0 4%;
+  height: 160rpx;
+  background-color: white;
+  margin-top:26rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav_item
+{
+  display: inline-flex;
+  align-items: center;
+  width: 340rpx
+ 
+}
+.nav_line
+{
+  display: block;
+  height: 120rpx;
+  border-left: 2rpx solid #F2F2F2;
+}
+.image_box
+{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.nav_img
+{
+  width: 90rpx;
+  height: 90rpx;
+}
+.title_font
+{
+  font-size: 30rpx;
+}
+.title_top
+{
+  color:#666;
+}
+.title_bottom
+{
+  color:#999999;
+  font-size: 26rpx;
+}
+
+/******热门礼品*******/
+.hot_img
+{
+  border-radius: 6rpx;
+}
+.hot_box
+{
+  border-top:2rpx solid #EAF0F6;
+}
+.hot_gift
+{
+  display: inline-flex;
+  justify-content:space-between;
+  align-items: baseline;
+  width: 92%;
+  padding:0 4%;
+   margin-top:30rpx;
+}
+.hot_title
+{
+  font-size: 36rpx;
+  color:#333;
+ 
+}
+.hot_more
+{
+  font-size: 30rpx;
+  color:#999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hot_more::after
+{
+  content: '';
+  display: block;
+  width: 20rpx;
+  height: 20rpx;
+  border-top:2rpx solid #B4B5B6;
+  border-right: 2rpx solid #B4B5B6;
+  transform: rotateZ(45deg);
+}
+.scroll_view
+{
+  width: 100%;
+   margin-top:24rpx;
+}
+.scroll_banner
+{
+  width: 216rpx;
+  margin:0 13rpx;
+
+}
+.scoll_box
+{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+.scroll_img
+{
+  width: 216rpx;
+  height: 216rpx;
+  border-radius:6rpx;
+}
+.scroll_title :first-child
+{
+  color:#666;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+   margin-bottom:10rpx;
+}
+.scroll_title:last-child
+{
+  color:#f25022;
+  font-size: 30rpx;
+ 
+}
+/*********/
+.luck_draw
+{
+  width: 92%;
+  padding:26rpx 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2rpx  solid #F3F4F4;
+  border-top:2rpx  solid #F3F4F4;
+  margin-top:30rpx;
+}
+.luck_draw>image
+{
+  height: 260rpx;
+  width:100%;
+}
+/********/
+.recommend_box
+{
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top:24rpx;
+
+}
+.recommend_item
+{
+  margin-bottom: 28rpx;
+    background-color: white;
+    box-shadow:0px 0px 6px #eee;
+}
+.recommend_item>image
+{
+  width: 332rpx;
+  height: 332rpx;
+}
+.recommend_info
+{
+  width: 260rpx;
+  margin:0 auto;
+  
+}
+.recommend_info :first-child
+{
+  color:#666666;
+  font-size: 26rpx;
+}
+.recommend_info :last-child
+{
+  color:#f25022;
+  font-size: 30rpx;
+  margin-top:16rpx;
+  margin-bottom: 26rpx;
+}
+
+/* PDF栏 */
+
+.pdfsection {
+  width: 90vw;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+  padding: 0 5vw;
+  margin: 20rpx 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.get_pdf {
+  font-size: 30rpx;
+  color: rgb(45, 0, 128);
+  text-underline-position: auto;
+}
+
+.search_playbook{
+  width: 200rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+
+  background-color: #eee;
+  border: solid 2rpx #b4b5b6;
+  border-radius: 15rpx;
+
+  font-size: 30rpx;
+  color: #666;
+  text-align: center;
+
+}
+
+/* playbook 案例列表 */
+
+/**mini刊item**/
+
+.indexExampPb {
+  width: 90vw;
+  height: auto;
+  padding: 20rpx 5vw;
+  background-color: #fff;
+}
+
+.playbook_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 0rpx;
+  /* padding-left:24rpx;
+  padding-right: 30rpx; */
+  border-bottom: 2rpx solid #f1f1f1;
+}
+
+/*mini刊封面容器*/
+
+.playbook_img_box {
+  width: 180rpx;
+  height: 180rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*mini刊封面image*/
+
+.playbook_img {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+/*mini刊信息容器*/
+
+.playbook_info_box {
+  display: flex;
+  flex-direction: column;
+  height: 160rpx;
+  padding: 10rpx 0;
+  width: 440rpx;
+  justify-content: space-between;
+  position: relative;
+}
+
+.playbook_info_container {
+  display: flex;
+  flex-direction: column;
+  height: 90rpx;
+  justify-content: space-around;
+}
+
+/*mini刊标题*/
+
+.playbook_title {
+  font-size: 30rpx;
+  color: #333;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+/*mini刊状态*/
+
+.playbook_summary {
+  width: 440rpx;
+  height: auto;
+  font-size: 26rpx;
+  color: #aaa;
+  /* border-radius: 10rpx;
+  border:2rpx solid #30b5f2; */
+  line-height: 32rpx;
+  padding: 2rpx 5rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/*mini刊日期*/
+
+.playbook_date
+{
+  font-size: 20rpx;
+  color:#999;
+  display: flex;
+  align-items: center;
+}
+
+/*时钟icon容器*/
+
+.clock_box
+{
+  width:22rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+}
+
+/*时钟icon*/
+
+.clock_box_img
+{
+  width:22rpx;
+  height: 22rpx;
+}

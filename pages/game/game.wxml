@@ -1,0 +1,33 @@
+<!--积分抽奖游戏-->
+<view class="game_box" >
+  <view class="game_container">
+    <view class="titles">
+      <view class="my_integral">
+        我的积分：{{myIntegral}}
+      </view>
+      <view class="lines"></view>
+      <view class="turntable_box">
+          <view class="turntable"  animation="{{animationData}}" >
+            <!--<image src="../../images/turntable_1.png"></image>-->
+            <view wx:for="{{lucyList}}" wx:key="game_{{index}}" class="integral_item" style="transform:rotateZ({{45*index+22.5}}deg);">
+              <text wx:if="{{item.score!='0'}}" class="color_{{index}}">{{item.name}}</text>
+              <text wx:if="{{item.score=='0'}}" style="color:#fff">{{item.name}}</text>
+              <image wx:if="{{item.score=='0'}}" src="../../images/look.png"></image>
+            </view>
+          </view>
+          <view class="arrow_box" bindtap="{{canStart ? 'startGame':''}}">
+            <image src="../../images/arrow.png"></image>
+          </view>
+      </view>
+    </view>
+  </view>
+  <!--游戏规则-->
+  <view class="game_rule_box">
+    <text class="game_rule">抽奖规则</text>
+  </view>
+  <!--规则内容-->
+  <view class="rule_content">
+    <view>1、每天可抽奖三次，每次20积分。</view>
+    <view>2、中奖积分将添加到“我的积分”中。</view> 
+  </view>
+</view>

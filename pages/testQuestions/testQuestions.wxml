@@ -1,0 +1,26 @@
+<!--引入模板地址-->
+
+<import src="./questionsList.wxml" />
+<view hidden="{{hiddenPage}}">
+  <view class="test_paper">
+    <!--得分规则question_rules-->
+    <!--答题结果answer_right-->
+    <template is="{{testList.testtype==0?'question_rules':testList.testtype==1?'answer_right':'answer_false'}}" data="{{result:result,imgUrl:imgUrl,testname:testname,examstatus:examstatus,remark:remark}}" />
+    <!--题库-->
+    <form bindsubmit="formSubmit">
+      <view class="questions_items">
+        <view class="single_question" wx:for="{{testList.testlist}}" wx:key="title_{{index}}">
+          <view class="question">
+            {{index+1}}，{{item.testtile}}
+            <text wx:if="{{item.radio}}">[单选]</text>
+            <text wx:else>[多选]</text>
+          </view>
+          <!--使用单选-->
+          <template is="{{item.radio?'radio_question':'multiselect_question'}}" data="{{selectitems:item.selectitems,qid:item.qid,testtype:testList.testtype}}" />
+        </view>
+        <!--提交按钮-->
+        <button wx:if="{{testList.testtype=='0'}}" class="submit" formType="submit">提交答案</button>
+      </view>
+    </form>
+  </view>
+</view>

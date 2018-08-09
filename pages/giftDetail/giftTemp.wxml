@@ -1,0 +1,32 @@
+<!--礼品基本信息(积分) 1-->
+<template name="integral_info_list">
+    <view class="gift_base_box">
+      <view class="base_item base"><text>基本信息</text></view>
+      <view class="base_item">
+        <text>品牌</text>
+        <text>{{giftbase.brand}}</text>
+      </view>
+      <view class="base_item">
+        <text>适用城市：</text>
+        <text>{{giftbase.city}}</text>
+      </view>
+      <view class="base_item">
+        <text>适用范围：</text>
+        <text>{{giftbase.range}}</text>
+      </view>
+       <view class="base_item">
+        <text>有效期：</text>
+        <text>{{giftbase.validity}}前</text>
+      </view>
+    </view>
+</template>
+<!--礼品基本信息（实物）2-->
+<template name="gift_info_list">
+  <view class="gift_base_box">
+    <view class="base">基本信息</view>
+    <view wx:for="{{giftbase}}" wx:key="gifts_{{index}}" class="base_item">
+      <text>{{item.name}}</text>
+      <text>{{item.value}}</text>
+    </view>
+  </view>
+</template>

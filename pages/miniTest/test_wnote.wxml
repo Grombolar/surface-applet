@@ -1,0 +1,21 @@
+<import src="../testQuestions/questionsList.wxml" />
+<template name="test_wnote">
+<view class="wnote_header">
+  <text class="wnote_header_num">共有{{tempData.listNum}}道错题</text>
+  <text class="wnote_header_text">经常复习错题，才能拿更多的积分哦</text>
+</view>
+  <view class="questions_items">
+    <view class="single_question" wx:for="{{tempData.testList.testlist}}" wx:key="title_{{index}}">
+      <view class="question">
+         {{index+1}}，{{item.testtile}} 
+  
+        <text wx:if="{{item.radio}}">[单选]</text>
+        <text wx:else>[多选]</text>
+      </view>
+      <!--使用单选-->
+      <template is="{{item.radio ?'radio_question':'multiselect_question'}}" data="{{selectitems:item.selectitems,qid:item.qid,testtype:testList.testtype}}" />
+    </view>
+    <!--提交按钮-->
+    <!-- <button wx:if="{{testList.testtype=='0'}}" class="submit" formType="submit">提交答案</button> -->
+  </view>
+</template>

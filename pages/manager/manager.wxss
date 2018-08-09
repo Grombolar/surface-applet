@@ -1,0 +1,82 @@
+/* manager.wxss */
+page
+{
+  background-color: #F7FAFD;
+
+}
+.person_list_x
+{
+  width: 100%;
+  padding:0 30rpx;
+  box-sizing: border-box;
+ 
+}
+.person_item
+{
+  width: 700rpx;
+  height: 128rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 24rpx;
+  margin:0 auto;
+  margin-top:24rpx;
+}
+.person_container
+{
+  display: flex;
+  align-items: center;
+}
+.person_photo
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.person_photo>image
+{
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+}
+.person_info
+{
+  height: 104rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left:20rpx;
+}
+.person_name
+{
+  color:#333;
+  font-size: 36rpx;
+  line-height: 36rpx;
+}
+.person_statue
+{
+  color:#fff;
+  font-size: 24rpx;
+  background-color: #f25022;
+  width:116rpx;
+  height: 34rpx;
+  text-align: center;
+  line-height: 34rpx;
+  border-top-left-radius: 17rpx;
+  border-top-right-radius: 17rpx;
+   border-bottom-right-radius: 17rpx;
+    border-bottom-left-radius: 17rpx;
+
+}
+.to_next
+{
+   content: '';
+  display: block;
+  width: 20rpx;
+  height: 20rpx;
+  border-top:2rpx solid #B4B5B6;
+  border-right: 2rpx solid #B4B5B6;
+  transform: rotateZ(45deg);
+}

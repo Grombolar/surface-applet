@@ -1,0 +1,134 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": false,
+		"newFeature": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.2",
+	"appid": "wxabb67d8cecec51be",
+	"projectname": "surface%E6%AD%A3%E5%BC%8F",
+	"miniprogramRoot": "./",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 13,
+			"list": [
+				{
+					"id": 0,
+					"name": "认证",
+					"pathName": "pages/auth/auth",
+					"query": "scene=50",
+					"scene": "1011"
+				},
+				{
+					"id": 1,
+					"name": "知识管理",
+					"pathName": "pages/repository/repository",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "全部礼品",
+					"pathName": "pages/allGifts/allGifts",
+					"query": "scene=50",
+					"scene": "1011"
+				},
+				{
+					"id": 3,
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 4,
+					"name": "积分抽奖",
+					"pathName": "pages/game/game",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 5,
+					"name": "活动页",
+					"pathName": "pages/activity/activity",
+					"query": "activity_id=2&id=1",
+					"scene": "1011"
+				},
+				{
+					"id": 6,
+					"name": "活动列表",
+					"pathName": "pages/myActivityList/myActivityList",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "授权页",
+					"pathName": "pages/authorization/authorization",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 8,
+					"name": "签到",
+					"pathName": "pages/signIn/signIn",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "文章详情",
+					"pathName": "pages/newArticle/newArticle",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 10,
+					"name": "PlayBook",
+					"pathName": "pages/playBook/playBook",
+					"query": "id=1",
+					"scene": "1011"
+				},
+				{
+					"id": 11,
+					"name": "PlayBook阅读页",
+					"pathName": "pages/playBook/playBook",
+					"query": "id=7",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "搜索PlayBook",
+					"pathName": "pages/searchPlayBook/searchPlayBook",
+					"query": ""
+				},
+				{
+					"id": 13,
+					"name": "文章详情",
+					"pathName": "pages/articleDetail/articleDetail",
+					"query": "id=37&member_id=189",
+					"scene": "1011"
+				}
+			]
+		}
+	}
+}

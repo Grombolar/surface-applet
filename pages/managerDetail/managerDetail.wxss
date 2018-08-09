@@ -1,0 +1,136 @@
+page
+{
+  background-color: #F7FAFD;
+}
+.manager_box
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.manager_photo
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:38rpx;
+}
+.manager_photo>image
+{
+  width:126rpx;
+  height: 126rpx;
+  border-radius: 50%;
+}
+.manaer_name
+{
+  color:#333333;
+  font-size: 36rpx;
+  margin-top:12rpx;
+}
+.explain
+{
+  font-size: 26rpx;
+  color:#666;
+  line-height:40rpx;
+}
+/*申请者信息**/
+.apply_info
+{
+  width: 690rpx;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top:30rpx;
+  padding:0 30rpx;
+  background-color: #fff;
+}
+.info_item
+{
+  display:inline-flex;
+  align-items: center;
+  height: 82rpx;
+  border-bottom: 2rpx solid #FBFBFB;
+  width: 100%;
+}
+.icon_box
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right:12rpx;
+
+}
+.icon_box>image
+{
+  width: 26rpx;
+  height: 23rpx;
+}
+.title
+{
+  color:#333333;
+  font-size: 30rpx;
+  width:94rpx;
+}
+.info
+{
+  color:#666666;
+  font-size: 26rpx;
+  width:510rpx;
+}
+.left_box
+{
+  display:inline-flex;
+}
+.remark
+{
+  display:inline-flex;
+  min-height: 82rpx;
+  border-bottom: 2rpx solid #FBFBFB;
+  width: 100%;
+  align-items: center; 
+  padding:20rpx 0;
+  box-sizing: border-box;
+}
+/*提交按钮**/
+.submit_box
+{
+  margin-top:80rpx;
+}
+.btn_box
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.btn_box>button
+{
+  width:330rpx;
+  height: 90rpx;
+  color:#fff;
+  font-size: 36rpx;
+}
+.adopt
+{
+  background-color: #32B5F2;
+}
+.refuse
+{
+  background-color: #999999;
+}
+/**移除经销员*/
+.remove_btn
+{
+  width: 100%;
+  box-sizing: border-box;
+  padding:0 30rpx;
+}
+.remove_btn button
+{
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color:  #32B5F2;
+  color:#fff;
+  font-size: 36rpx;
+}

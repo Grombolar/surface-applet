@@ -1,0 +1,2 @@
+<import src="./temp.wxml" />
+<template wx:if="{{show}}" is="{{temp_name}}" data="{{msg}}"/>

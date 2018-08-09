@@ -1,0 +1,31 @@
+<!--兑换礼券成功 0-->
+<template name="gift_card_succ">
+  <view class="gift_card_box">
+    <view class="gift_warning_1">恭喜您兑换成功！</view>
+    <view class="gift_warning_1">礼券在此，请笑纳！</view>
+    <!--礼券-->
+  <view class="gift_token_list" > 
+    <view class="gift_token" style="background-image: url(http://surface.jeemoo.com/images/static/card_gb.png)" wx:for="{{cardInfo}}" wx:key="carid_{{index}}">
+      <view class="gift_token_box">
+        <view class="gift_token_value">{{item.cardvalue}}积分</view>
+        <view class="gift_token_name ellipsis">{{item.cardname}}</view>
+      </view>
+      <view class="gift_token_id">
+        <view class="one_line" style="width:640rpx">券号：{{item.cardid}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="gift_warning_2"><navigator url="../center/center" open-type="reLaunch">您可随时通过<text style="color:#32B5F2">“我的订单”</text>找到此礼券</navigator></view>
+  </view>
+</template>
+
+<!--兑换实物成功 1-->
+<template name="gift_succ">
+  <view class="succ_icon">
+    <icon type="success" size="100" color="#32B5F2"/>
+  </view>
+  <view class="succ_text">恭喜您兑换成功！</view>
+  <view class="succ_explain">
+    <navigator url="../center/center"  open-type="reLaunch">您可随时通过 <text style="color:#32B5F2">“我的订单”</text> 查看订单状态</navigator>
+  </view>
+</template>

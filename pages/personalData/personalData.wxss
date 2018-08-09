@@ -1,0 +1,182 @@
+/* personalData.wxss */
+page
+{
+  background-color: #F7FAFD;
+  padding-top:36rpx;
+  display: table;
+}
+.user_info_header
+{
+  width: 690rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user_photo
+{
+  width:120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.user_name
+{
+  color:#333;
+  font-size: 36rpx;
+  line-height: 36rpx;
+  margin-top:13rpx;
+}
+.user_warn_box
+{
+  margin-top:8rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+.user_warn
+{
+  color:#666;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+/*用户列表*/
+.user_info_list
+{
+  width: 380rpx;
+  background-color: white;
+  margin-top:10rpx;
+  padding-left:20rpx;
+  padding-top:14rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+
+}
+.user_item
+{
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.user_item_icon
+{
+  width: 36rpx;
+  height: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16rpx;
+}
+.user_item_icon>image
+{
+  width: 28rpx;
+  height: 30rpx;
+}
+.item
+{
+  color:#666;
+  font-size:26rpx;
+}
+/**用户基本信息样式**/
+.user_info_contaner
+{
+  width: 690rpx;
+  margin: 0 auto;
+  margin-top:30rpx;
+  display: table;
+}
+.user_info_item
+{
+  margin-bottom: 24rpx;
+}
+.item_icon_box
+{
+  width: 28rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item_icon_box>image
+{
+  width: 30rpx;
+  height: 30rpx;
+}
+.item_header
+{
+  display:inline-flex;
+  align-items: center;
+}
+.item_title
+{
+  color:#333333;
+  font-size: 30rpx;
+  margin-left:12rpx;
+}
+.item_input
+{
+  margin-top:20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.item_input .item_content
+{
+  width: 100%;
+  height: 90rpx;
+  border:2rpx solid #DEDFE1;
+  background-color: white;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+  padding:0 46rpx;
+  font-size: 28rpx;
+  color:#666;
+}
+.item_picker
+{
+  position: relative;
+  line-height:90rpx;
+}
+.item_picker_arrow::after
+{
+  content: '';
+  display: block;
+  width: 20rpx;
+  height: 20rpx;
+  border-top:2rpx solid #B4B5B6;
+  border-right: 2rpx solid #B4B5B6;
+  transform: rotateZ(135deg);
+  position: absolute;
+  right:26rpx;
+  top:26rpx;
+}
+.btn_style
+{
+  color:#fff;
+  font-size: 36rpx;
+  background-color:#32B5F2;
+  width: 690rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30rpx; 
+  margin-bottom:44rpx;
+}
+.sex_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sex_img
+{
+  width: 40rpx;
+  height: 40rpx;
+}
+.person_placeholder
+{
+  color:#E8E5E5;
+  font-size: 26rpx;
+}

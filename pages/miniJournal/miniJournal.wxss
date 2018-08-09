@@ -1,0 +1,146 @@
+/* pages/miniJournal/miniJournal.wxss */
+@import '../tabbar/tabbar.wxss';
+.mini_container
+{
+  display: flex;
+  justify-content: space-between;
+}
+.mini_bar_box
+{
+  height:91.722vh;
+  width:28%;
+  background-color: #f7fafd;
+  overflow-y: scroll;
+}
+.mini_bar
+{
+  width: 100%;
+  text-align: center;
+  height: 96rpx;
+  font-size: 30rpx;
+  color:#333333;
+  line-height: 96rpx;
+  border-bottom: 2rpx solid #F1F1F1;
+  border-right: 2rpx solid #F1F1F1;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling:touch;
+  position: relative;
+  padding:0 10rpx;
+}
+/*选中时按钮*/
+.selected_bar
+{
+  background-color: white;
+  color:#30b5f2;
+  font-weight: bold;
+}
+.selected_bar::after
+{
+  content: '';
+  display: block;
+  width:8rpx;
+  height: 96rpx;
+  background-color:#30b5f2;
+  position: absolute;
+  left: 0;
+  top:0; 
+  /*
+  background-color: white;
+  color:#30b5f2;
+  font-weight: bold;
+  border-left: 8rpx solid #30b5f2*/
+}
+/*mini刊列表*/
+.mini_list
+{
+  width:72%;
+  height:91.722vh;
+  background-color: white;
+  overflow-y: scroll;
+}
+/**mini刊item**/
+.journal_item
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:24rpx 0rpx;
+  padding-left:24rpx;
+  padding-right: 30rpx;
+  border-bottom: 2rpx solid #F1F1F1;
+}
+/*mini刊封面容器*/
+.journal_img_box
+{
+  width: 140rpx;
+  height: 140rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*mini刊封面image*/
+.journal_img
+{
+  width: 140rpx;
+  height: 140rpx;
+}
+/*mini刊信息容器*/
+.journal_info_box
+{
+  display: flex;
+  flex-direction: column;
+  height: 140rpx;
+  width: 332rpx;
+  justify-content:space-between;
+  position: relative;
+}
+.journal_info_container
+{
+  display: flex;
+  flex-direction: column;
+  height: 90rpx;
+  justify-content: space-around;
+}
+/*mini刊标题*/
+.journal_title
+{
+  font-size: 30rpx;
+  color:#333;
+}
+/*mini刊状态*/
+.journal_status
+{
+  font-size: 26rpx;
+  color:#30b5f2;
+  border-radius: 10rpx;
+  border:2rpx solid #30b5f2;
+  text-align: center;
+  line-height: 36rpx;
+ 
+  padding:2rpx 10rpx
+}
+/*mini刊日期*/
+.journal_date
+{
+  font-size: 20rpx;
+  color:#999;
+  display: flex;
+  align-items: center;
+}
+/*时钟icon容器*/
+.clock_box
+{
+  width:22rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+}
+/*时钟icon*/
+.clock_box_img
+{
+  width:22rpx;
+  height: 22rpx;
+}

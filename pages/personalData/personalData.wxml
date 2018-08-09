@@ -1,0 +1,106 @@
+<!--引入模板地址-->
+<import src="./personalDataTemp.wxml" />
+<!--头部-->
+<template is="personal_header" data="{{issale:issale,manager:manager,src:src,userInfo:userInfo,authentication:authentication,isShowApplyTip:isShowApplyTip}}" />
+<!--用户基本信息-->
+<form bindsubmit="formSubmit">
+  <view class="user_info_contaner">
+    <!--公司名称-->
+    <view class="user_info_item" wx:if="{{isShowConpany}}">
+      <view class="item_header">
+        <view class="item_icon_box">
+          <image src="../../images/company.png" style="height:28rpx"></image>
+        </view>
+        <view class="item_title" wx:if="{{!src}}">MPN ID</view>
+        <view class="item_title" wx:else >公司</view>
+      </view>
+       <view class="item_input" hidden="{{hid}}" wx:if="{{isShowConpany}}" >
+        <picker mode="selector" disabled="{{conpanySelect}}" style="color:{{authentication?'#7A7A7A':''}}" bindchange="pickerChange" name="company_id" value="{{value}}" range="{{conpanylist}}"  class="item_content item_picker {{!conpanySelect?'item_picker_arrow':''}}">
+         {{conpanylist[index]}}
+        </picker>
+      </view>
+      <!--输入公司代号-->
+      <view  class="item_input"  hidden="{{!hid}}" wx:if="{{isShowConpany}}">
+         <input cursor-spacing="30" type="number" class="item_content" disabled="{{authentication}}" name="mpn_num"  placeholder-class="person_placeholder" placeholder="请输入公司代号"/>
+      </view>
+    </view>
+    <!--姓名-->
+    <view class="user_info_item">
+      <view class="item_header">
+        <view class="item_icon_box">
+          <image src="../../images/name.png" style="height:28rpx"></image>
+        </view>
+        <view class="item_title" >姓名</view>
+      </view>
+      <view class="item_input">
+        <input disabled="{{authentication}}"  placeholder-class="person_placeholder" class="item_content" name="username"  value="{{info.username}}"  placeholder="请输入姓名"/>
+      </view>
+    </view>
+    <!--性别-->
+    <radio-group bindchange="radioChange" name="sex"  class="user_info_item">
+      <view class="item_header">
+        <view class="item_icon_box">
+          <image src="../../images/gender_ss.png" style="width:26rpx;height:23rpx"></image>
+        </view>
+        <view class="item_title">性别</view>
+      </view>
+      <view class="item_input">
+        <view style="margin-right:60rpx" >
+          <label class="sex_box" for="male" style="padding-right:10rpx;"> 
+             <image style="opacity:{{authentication?0.5:1}};" class="sex_img" src="../../images/{{gender?'single_yes.png':'single_no.png'}}"></image>
+             <text style="margin-left:10rpx;font-size:28rpx;color:{{authentication?'#7A7A7A':'#666'}}">男</text>
+            <radio id="male" hidden disabled="{{authentication}}" value="1" checked="{{info.sex=='1'}}" />
+          </label>
+        </view>
+        <view >
+          <label class="sex_box" for="female" style="padding-right:10rpx;" >
+            <image style="opacity:{{authentication?0.5:1}};" class="sex_img"  src="../../images/{{!gender?'single_yes.png':'single_no.png'}}"></image>
+            <text style="margin-left:10rpx;font-size:28rpx;color:{{authentication?'#7A7A7A':'#666'}}">女</text>
+             <radio id="female" hidden disabled="{{authentication}}" value="2" checked="{{info.sex=='2'}}" />
+          </label>
+        </view>
+      </view>
+    </radio-group >
+    <!--电话-->
+    <view class="user_info_item">
+      <view class="item_header">
+        <view class="item_icon_box">
+          <image src="../../images/phone.png" style="height:32rpx"></image>
+        </view>
+        <view class="item_title">电话</view>
+      </view>
+      <view class="item_input">
+        <input cursor-spacing="30" type="number" class="item_content" disabled="{{authentication}}" name="userphone"  value="{{info.userphone}}" placeholder-class="person_placeholder" placeholder="请输入电话"/>
+      </view>
+    </view>
+    <!--邮件-->
+    <view class="user_info_item">
+      <view class="item_header">
+        <view class="item_icon_box">
+          <image src="../../images/email.png" style="height:28rpx"></image>
+        </view>
+        <view class="item_title">邮件</view>
+      </view>
+      <view class="item_input">
+        <input  cursor-spacing="30" placeholder-class="person_placeholder" class="item_content" disabled="{{authentication}}" name="useremail" value="{{info.useremail}}"  placeholder="请输入邮件"/>
+      </view>
+    </view>
+    <!--备注-->
+    <view class="user_info_item">
+      <view class="item_header">
+        <view class="item_icon_box">
+          <image src="../../images/remark.png" style="height:28rpx"></image>
+        </view>
+        <view class="item_title">备注</view>
+      </view>
+      <view class="item_input"  ><!--style="height:140rpx;padding:0 46rpx;color:{{authentication?'#DEDFE1':''}}"-->
+        <textarea style="height:140rpx;padding:{{padding?'20rpx':0}} 40rpx;color:{{authentication?'#7A7A7A':''}}" cursor-spacing="30" disabled="{{authentication}}" placeholder-class="person_placeholder" class="item_content" name="remark" value="{{info.remark}}"  placeholder="请输入备注"/>
+      </view>
+    </view>
+  </view>
+  <!--0为没有认证，或者为普通用户-->
+  <view wx:if="{{!authentication}}">
+    <button wx:if="{{!src}}" hidden="{{issale}}" formType="submit" class="btn_style">申请认证</button>
+    <button wx:elif="{{src}}"  formType="submit" class="btn_style">保存</button>
+  </view>
+</form>

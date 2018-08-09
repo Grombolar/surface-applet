@@ -1,0 +1,103 @@
+
+<!--答题规则-->
+<template name="question_rules">
+  <view wx:if="{{testname&&examstatus==2}}" class="test_title">
+    {{testname}}
+  </view>
+  <view class="question_container">
+    <view class="question_info" style="margin-bottom:20rpx">
+      <!--容器-->
+      <view class="remind_box">
+        <image style="width:30rpx;height:33rpx" src="../../images/remind.png"></image>
+      </view>
+      <view class="q_rules">规则：答对题目则可获得相应的积分，全部答错则未通过 </view>
+    </view>
+    <view class="question_info" wx:if="{{examstatus==2}}">
+      <!--容器-->
+      <view class="remind_box" style="position:relative;top:2rpx">
+        <image class="remind_img" src="../../images/remark_s.png"></image>
+      </view>
+      <view class="q_rules">备注：{{remark}} </view>
+    </view>
+  </view>
+</template>
+<!--答题成功-->
+<template name="answer_right">
+  <view class="answer_box" style="background-image:url({{imgUrl}}/images/static/succ_bg.png)">
+    <view class="answer_result">
+     <view class="integral_add">
+     {{result.score==0?'':'+'+result.score}}积分
+    </view>
+    <view class="warning">
+      恭喜您已通过考试！
+    </view>
+    <view class="result">
+      回答正确{{result.success}}题 错误{{result.fail}}题
+    </view>
+    </view>
+  </view>
+</template>
+<!--答题失败-->
+<template name="answer_false">
+  <view class="answer_box" style="background-image:url({{imgUrl}}/images/static/answer_err.png)">
+    <view class="answer_result" style="margin-top: 190rpx; ">
+     <view class="integral_add" hidden>
+      {{result.score==0?'':'+'+result.score}}积分
+    </view>
+    <view class="warning" >
+      很遗憾，没有通过考试！
+    </view>
+    <view class="result">
+      回答正确{{result.success}}题 错误{{result.fail}}题
+    </view>
+    </view>
+  </view>
+</template>
+<!-- isselect: false,
+   answeris: false
+   single_yes.png':'single_no.png
+   -->
+<!--单选模板-->
+<template name="radio_question">
+  <radio-group bindchange="radioChange" id="{{qid}}" name="{{qid}}" class="radio-group">
+    <label class="choice_item" for="radio_{{qid+'_'+item.id}}" wx:for="{{selectitems}}" wx:key="radio_{{index}}">
+        <radio class="shrink" hidden="{{true}}" id="radio_{{qid+'_'+item.id}}" name="id" value="{{item.id}}" />
+        <view class="select_item_icon">
+          <image wx:if="{{item.isselect==false}}" src="../../images/single_no.png" class="select_item_icon_image"></image>
+          <image wx:elif="{{item.isselect}}" src="../../images/single_yes.png" class="select_item_icon_image"></image>
+        </view>
+        <!--没有测试-->
+        <view wx:if="{{testtype==0}}" class="answer"> 
+          <view style="margin-right:40rpx">{{item.item}}</view>
+        </view>
+        <!--已经测试-->
+        <view wx:else class="answer  {{(item.isselect==1&&item.answeris!=1)?'user_selected':''}}" > 
+          <view style="margin-right:40rpx" class="{{item.answeris==1?'right_answer':''}}"  style="width:68%;">{{item.item}}</view>
+          <view wx:if="{{item.answeris==1}}" class="{{item.answeris==1?'right_answer':''}}">【正确答案】</view>
+          <view wx:elif="{{item.isselect==1}}">【您的答案】</view>
+          
+        </view>
+    </label>
+  </radio-group>
+</template>
+<!--多选模板-->
+<template name="multiselect_question">
+  <checkbox-group bindchange="checkboxChange" id="{{qid}}" name="{{qid}}" class="radio-group">
+        <label class="choice_item" for="checkbox_{{qid+'_'+item.id}}" wx:for="{{selectitems}}" wx:key="checkbox_{{index}}">
+          <checkbox class="shrink" hidden="{{true}}"  id="checkbox_{{qid+'_'+item.id}}" name="id" value="{{item.id}}"  />
+        <view class="select_item_icon">
+          <image wx:if="{{item.isselect==false}}"  src="../../images/multiselect_no.png" class="select_item_icon_image"></image>
+          <image wx:elif="{{item.isselect}}" src="../../images/multiselect_yes.png" class="select_item_icon_image"></image>
+        </view>
+        <view wx:if="{{testtype==0}}" class="answer">
+          <view style="margin-right:40rpx">{{item.item}}</view>
+        </view>
+        <view wx:else  class="answer {{(item.isselect==1&&item.answeris!=1)?'user_selected':''}}" >
+          <view style="margin-right:40rpx"  class="{{item.answeris==1?'right_answer':''}}" style="width:68%;">{{item.item}}</view>
+            <view wx:if="{{item.answeris==1}}" style="display:flex;align-item:center" class="{{item.answeris==1?'right_answer':''}}">【正确答案】</view>
+          <view wx:elif="{{item.isselect==1}}">【您的答案】</view>
+        
+        </view>
+      </label>
+  </checkbox-group>
+</template>

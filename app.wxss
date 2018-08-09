@@ -1,0 +1,86 @@
+/*两行省略*/
+.ellipsis
+{
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+.navigator-hover
+{
+  background-color: rgba(0, 0, 0, 0);
+  opacity:1;
+}
+/*一行省略*/
+.one_line
+{
+  overflow:hidden; 
+   text-overflow:ellipsis;
+   white-space: nowrap;
+}
+.box_shadow
+{
+  box-shadow: 0px 6rpx 20rpx 6rpx #ddd;
+  /*box-shadow: 0 -4rpx 6rpx 6rpx #eee;
+  box-shadow: 水平阴影 垂直阴影 模糊距离 阴影大小 阴影颜色  内部阴影;*/
+}
+
+/*取消滑动条样式*/
+::-webkit-scrollbar {
+  width: 0rpx;
+  height: 0rpx;  
+  color: transparent;
+}
+::-webkit-scrollbar-track {
+  width: 0rpx;
+  height: 0rpx;  
+  color: transparent;
+}
+.no_page
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.images_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+/*提示框样式**/
+.mark
+{
+  width: 0;
+  height: 0;
+  position: fixed;
+  top:0;
+  left:0;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  z-index: 99999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.node_box
+{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 350rpx;
+  height: 350rpx;
+  border-radius: 10rpx;
+  background-color: #CFD2D4;
+  flex-direction: column;
+}
+.node_title
+{
+  color:#666666;
+  font-size: 30rpx;
+  margin-top:30rpx;
+}

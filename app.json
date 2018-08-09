@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/articleDetail/articleDetail",
+    "pages/exchangeGift/exchangeGift",
+    "pages/giftDetail/giftDetail",
+    "pages/signIn/signIn",
+    "pages/earnPoints/earnPoints",
+    "pages/game/game",
+    "pages/managerDetail/managerDetail",
+    "pages/manager/manager",
+    "pages/myOrder/myOrder",
+    "pages/orderDetail/orderDetail",
+    "pages/myIntegral/myIntegral",
+    "pages/miniTest/miniTest",
+    "pages/testQuestions/testQuestions",
+    "pages/center/center",
+    "pages/miniJournal/miniJournal",
+    "pages/allGifts/allGifts",
+    "pages/auth/auth",
+    "pages/personalData/personalData",
+    "pages/repository/repository",
+    "pages/search/search",
+    "pages/activity/activity",
+    "pages/questionnaire/questionnaire",
+    "pages/myActivityList/myActivityList",
+    "pages/knowledge/knowledge",
+    "pages/authorization/authorization",
+    "pages/newKnowledge/newKnowledge",
+    "pages/newArticle/newArticle",
+    "pages/download/download",
+    "pages/playBookList/playBookList",
+    "pages/productList/productList",
+    "pages/solutionList/solutionList",
+    "pages/playBook/playBook",
+    "pages/searchPlayBook/searchPlayBook"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#19adf1",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 0
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "uploadFile": 100000
+  },
+  "debug": false,
+  "plugins": {
+    "tencentvideo": {
+      "version": "1.1.2",
+      "provider": "wxa75efa648b60994b"
+    }
+  }
+}
